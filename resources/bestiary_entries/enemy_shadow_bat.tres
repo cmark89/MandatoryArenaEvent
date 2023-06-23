@@ -1,0 +1,15 @@
+[gd_resource type="Resource" script_class="BestiaryEntry" load_steps=3 format=3 uid="uid://dll25i4ffxfn3"]
+
+[ext_resource type="Texture2D" uid="uid://bu8662d56qdql" path="res://scenes/game_object/bat_enemy/bat.png" id="1_bemmu"]
+[ext_resource type="Script" path="res://resources/bestiary_entries/bestiary_entry.gd" id="2_4ik52"]
+
+[resource]
+script = ExtResource("2_4ik52")
+id = "shadow_bat"
+name = "Shadow Bat"
+image = ExtResource("1_bemmu")
+description = "Hailing from the southern reaches of the Mizakk jungles, these dog-sized bats are notorious for their savagery and hunger for blood.
+
+Shadow Bats, so named for their ability to move with absolute silence through the dark of the night, were once the proud symbol of the Nacretian Dynasties. As all school-aged children know, the Nacretians fell in a single night beneath the mighty power of Dark Lord Gareth and his unstoppable, divine-gifted authority, their ruins destined to become the foundation for the Imperial City.
+
+It is likely not a coincidence that these shadow bats, once noble guard beasts and companions, have been relegated to the second-lowest rung of Imperial society (slightly edging out the failed wizard)."

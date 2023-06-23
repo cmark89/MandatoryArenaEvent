@@ -1,0 +1,15 @@
+[gd_resource type="Resource" script_class="BestiaryEntry" load_steps=3 format=3 uid="uid://bseycrj2f3e38"]
+
+[ext_resource type="Texture2D" uid="uid://dg3ydwithqn1x" path="res://scenes/game_object/ratfink_enemy/ratfink.png" id="1_8iei1"]
+[ext_resource type="Script" path="res://resources/bestiary_entries/bestiary_entry.gd" id="2_nvhyk"]
+
+[resource]
+script = ExtResource("2_nvhyk")
+id = "ratfink"
+name = "Ratfink"
+image = ExtResource("1_8iei1")
+description = "Though they may appear to be slightly larger, slightly paler versions of their vicious sewer-dwelling brethren, the ratfink is actually a notorious imperial double agent.
+
+Charmed by cunning vermomancers, these rats go through legendarily grueling training to master spycraft, diplomacy, and subterfuge. 
+
+Usage of ratfinks is normally reserved for rooting out countercultural elements in the Empire, whether that be non-sanctioned religious activity or political activism. However, from time to time, they can be spotted participating in gladiatorial executions. It is unknown if this is part of some new top-secret training regimen, or if some other motive is behind their entry into the arena."

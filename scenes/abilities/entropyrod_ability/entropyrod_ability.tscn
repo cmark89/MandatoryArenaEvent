@@ -1,0 +1,311 @@
+[gd_scene load_steps=28 format=3 uid="uid://b3gcalka7yq1g"]
+
+[ext_resource type="Script" path="res://scenes/abilities/entropyrod_ability/entropyrod_ability.gd" id="1_2ab3w"]
+[ext_resource type="AudioStream" uid="uid://cqgs2ff2ubkvu" path="res://assets/audio/entropy_orb.mp3" id="2_81vi0"]
+[ext_resource type="Script" path="res://scenes/components/hitbox.gd" id="3_h4kfp"]
+[ext_resource type="Texture2D" uid="uid://doesse6fung8e" path="res://assets/particles/circle_05.png" id="3_ujnrh"]
+[ext_resource type="Texture2D" uid="uid://d1bsn5bb3k6y1" path="res://assets/particles/scorch_01.png" id="4_463nj"]
+[ext_resource type="Texture2D" uid="uid://df4dbyn2kl8ph" path="res://assets/particles/smoke_01.png" id="5_5qniw"]
+
+[sub_resource type="Animation" id="Animation_cgs3m"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Orb:emitting")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Orb2:emitting")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("Orb3:emitting")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("EntropyOrbSound:volume_db")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [-15.0]
+}
+
+[sub_resource type="Animation" id="Animation_fte64"]
+resource_name = "die"
+length = 1.5
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Orb:emitting")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Orb2:emitting")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("Orb3:emitting")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
+}
+tracks/3/type = "method"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath(".")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(1.5),
+"transitions": PackedFloat32Array(1),
+"values": [{
+"args": [],
+"method": &"queue_free"
+}]
+}
+tracks/4/type = "value"
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/path = NodePath("EntropyOrbSound:volume_db")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/keys = {
+"times": PackedFloat32Array(0, 0.4),
+"transitions": PackedFloat32Array(1, 0.392292),
+"update": 0,
+"values": [-15.0, -80.0]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_1lwxq"]
+_data = {
+"RESET": SubResource("Animation_cgs3m"),
+"die": SubResource("Animation_fte64")
+}
+
+[sub_resource type="Animation" id="Animation_sc1wh"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("HitboxComponent/CollisionShape2D:disabled")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
+}
+
+[sub_resource type="Animation" id="Animation_uum0i"]
+resource_name = "default"
+length = 0.33
+loop_mode = 1
+step = 0.11
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("HitboxComponent/CollisionShape2D:disabled")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.11),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [false, true]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_m0b0c"]
+_data = {
+"RESET": SubResource("Animation_sc1wh"),
+"default": SubResource("Animation_uum0i")
+}
+
+[sub_resource type="CanvasItemMaterial" id="CanvasItemMaterial_1w2ah"]
+blend_mode = 4
+
+[sub_resource type="Gradient" id="Gradient_888r7"]
+colors = PackedColorArray(0.892071, 0, 0.406257, 1, 1, 0.329412, 0.933333, 0)
+
+[sub_resource type="GradientTexture1D" id="GradientTexture1D_exiye"]
+gradient = SubResource("Gradient_888r7")
+
+[sub_resource type="ParticleProcessMaterial" id="ParticleProcessMaterial_yftgq"]
+lifetime_randomness = 1.0
+particle_flag_disable_z = true
+spread = 180.0
+gravity = Vector3(0, 0, 0)
+orbit_velocity_min = 0.0
+orbit_velocity_max = 0.0
+angle_max = 360.0
+scale_min = 0.1
+scale_max = 0.2
+color_ramp = SubResource("GradientTexture1D_exiye")
+color_initial_ramp = SubResource("GradientTexture1D_exiye")
+
+[sub_resource type="CanvasItemMaterial" id="CanvasItemMaterial_jtnnv"]
+blend_mode = 1
+
+[sub_resource type="Gradient" id="Gradient_p2ci8"]
+colors = PackedColorArray(0.892071, 0, 0.406257, 1, 1, 0.329412, 0.933333, 0)
+
+[sub_resource type="GradientTexture1D" id="GradientTexture1D_e7jc4"]
+gradient = SubResource("Gradient_p2ci8")
+
+[sub_resource type="ParticleProcessMaterial" id="ParticleProcessMaterial_h2ss7"]
+lifetime_randomness = 1.0
+particle_flag_disable_z = true
+spread = 180.0
+gravity = Vector3(0, 0, 0)
+angular_velocity_min = -45.0
+orbit_velocity_min = 0.0
+orbit_velocity_max = 0.0
+angle_max = 360.0
+scale_min = 0.2
+scale_max = 0.4
+color_ramp = SubResource("GradientTexture1D_e7jc4")
+color_initial_ramp = SubResource("GradientTexture1D_e7jc4")
+
+[sub_resource type="CanvasItemMaterial" id="CanvasItemMaterial_tqduj"]
+
+[sub_resource type="Gradient" id="Gradient_3irrf"]
+colors = PackedColorArray(0.892071, 0, 0.406257, 1, 1, 0.329412, 0.933333, 0)
+
+[sub_resource type="GradientTexture1D" id="GradientTexture1D_7c6ko"]
+gradient = SubResource("Gradient_3irrf")
+
+[sub_resource type="Gradient" id="Gradient_a1tjp"]
+colors = PackedColorArray(0.892071, 0, 0.406257, 1, 1, 0.329412, 0.933333, 0)
+
+[sub_resource type="GradientTexture1D" id="GradientTexture1D_7sbdd"]
+gradient = SubResource("Gradient_a1tjp")
+
+[sub_resource type="ParticleProcessMaterial" id="ParticleProcessMaterial_m65ei"]
+lifetime_randomness = 1.0
+particle_flag_disable_z = true
+spread = 180.0
+gravity = Vector3(0, 0, 0)
+angular_velocity_min = -25.0
+angular_velocity_max = 25.0
+orbit_velocity_min = 0.0
+orbit_velocity_max = 0.0
+angle_max = 360.0
+scale_min = 0.3
+scale_max = 0.5
+color_ramp = SubResource("GradientTexture1D_7sbdd")
+color_initial_ramp = SubResource("GradientTexture1D_7c6ko")
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_1s20r"]
+radius = 25.0
+
+[node name="EntropyRodAbility" type="Node2D"]
+script = ExtResource("1_2ab3w")
+
+[node name="Timer" type="Timer" parent="."]
+wait_time = 6.5
+one_shot = true
+autostart = true
+
+[node name="OrbAnimator" type="AnimationPlayer" parent="."]
+libraries = {
+"": SubResource("AnimationLibrary_1lwxq")
+}
+
+[node name="HitboxAnimator" type="AnimationPlayer" parent="."]
+autoplay = "default"
+libraries = {
+"": SubResource("AnimationLibrary_m0b0c")
+}
+
+[node name="EntropyOrbSound" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("2_81vi0")
+volume_db = -15.0
+autoplay = true
+max_distance = 300.0
+bus = &"SFX"
+
+[node name="Orb" type="GPUParticles2D" parent="."]
+modulate = Color(1, 1, 1, 0.521569)
+material = SubResource("CanvasItemMaterial_1w2ah")
+amount = 20
+process_material = SubResource("ParticleProcessMaterial_yftgq")
+texture = ExtResource("3_ujnrh")
+lifetime = 0.5
+fixed_fps = 0
+interpolate = false
+
+[node name="Orb2" type="GPUParticles2D" parent="."]
+modulate = Color(1, 1, 1, 0.521569)
+material = SubResource("CanvasItemMaterial_jtnnv")
+amount = 10
+process_material = SubResource("ParticleProcessMaterial_h2ss7")
+texture = ExtResource("4_463nj")
+lifetime = 0.5
+fixed_fps = 0
+interpolate = false
+
+[node name="Orb3" type="GPUParticles2D" parent="."]
+modulate = Color(1, 1, 1, 0.521569)
+material = SubResource("CanvasItemMaterial_tqduj")
+amount = 5
+process_material = SubResource("ParticleProcessMaterial_m65ei")
+texture = ExtResource("5_5qniw")
+lifetime = 1.5
+fixed_fps = 0
+interpolate = false
+
+[node name="HitboxComponent" type="Area2D" parent="."]
+collision_layer = 4
+collision_mask = 0
+script = ExtResource("3_h4kfp")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="HitboxComponent"]
+shape = SubResource("CircleShape2D_1s20r")

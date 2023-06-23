@@ -1,0 +1,18 @@
+[gd_scene load_steps=5 format=3 uid="uid://r5coytulttbm"]
+
+[ext_resource type="Texture2D" uid="uid://cf6h8s00xredh" path="res://assets/ui/arrow.png" id="1_noqo7"]
+[ext_resource type="AudioStream" uid="uid://bqryxesy2hlvb" path="res://assets/audio/click.wav" id="2_2y7rp"]
+[ext_resource type="Texture2D" uid="uid://dio2i8gmlv1yg" path="res://assets/ui/arrow_disabled.png" id="2_jsjv8"]
+[ext_resource type="Script" path="res://scenes/ui/sound_texture_button.gd" id="3_3eo32"]
+
+[node name="SoundTextureButton" type="TextureButton"]
+offset_right = 6.0
+offset_bottom = 6.0
+texture_normal = ExtResource("1_noqo7")
+texture_disabled = ExtResource("2_jsjv8")
+script = ExtResource("3_3eo32")
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("2_2y7rp")
+volume_db = 7.0
+bus = &"SFX"

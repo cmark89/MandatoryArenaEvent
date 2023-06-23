@@ -1,0 +1,46 @@
+[gd_scene load_steps=2 format=3 uid="uid://bn277rpok134"]
+
+[sub_resource type="GDScript" id="GDScript_wjjml"]
+script/source = "extends Node
+
+@export var hurtbox_collider: CollisionShape2D
+@export var collision_shape: CollisionShape2D
+
+const MAX_DIST = 100
+const CHECK_INTERVAL_FRAMES = 5
+
+var frame_count = 0
+var player: Node2D
+var collision_enabled = false
+
+func _ready():
+#	owner.max_slides = 4
+	player = get_tree().get_first_node_in_group(\"player\")
+	
+func _process(delta):
+	frame_count += 1
+	if frame_count % CHECK_INTERVAL_FRAMES == 0:
+		check_update_collision()
+
+
+func check_update_collision():
+	if player == null:
+		return
+	var in_range = player.global_position.distance_squared_to(owner.global_position) <= MAX_DIST
+	if in_range && !collision_enabled:
+		enable_collision()
+	elif !in_range && collision_enabled:
+		disable_collision()
+
+func enable_collision():
+	collision_enabled = true
+	hurtbox_collider.disabled = false
+	collision_shape.disabled = false
+
+func disable_collision():
+	hurtbox_collider.disabled = true
+	collision_shape.disabled = true
+"
+
+[node name="CollisionOptimizer" type="Node"]
+script = SubResource("GDScript_wjjml")

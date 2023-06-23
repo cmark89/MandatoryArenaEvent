@@ -1,0 +1,12 @@
+[gd_scene load_steps=3 format=3 uid="uid://dc4bd7usrsgqj"]
+
+[ext_resource type="Script" path="res://scenes/abilities/shuriken_ability_controller/shuriken_ability_controller.gd" id="1_2wvcf"]
+[ext_resource type="PackedScene" uid="uid://cbr4nook7u6jb" path="res://scenes/abilities/shuriken_ability/shuriken_ability.tscn" id="2_wscgj"]
+
+[node name="ShurikenAbilityController" type="Node"]
+script = ExtResource("1_2wvcf")
+shuriken_ability_scene = ExtResource("2_wscgj")
+
+[node name="Timer" type="Timer" parent="."]
+wait_time = 3.0
+autostart = true

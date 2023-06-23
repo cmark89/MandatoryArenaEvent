@@ -1,0 +1,17 @@
+[gd_resource type="Resource" script_class="ChronicleEntry" load_steps=2 format=3 uid="uid://bnh636l2tg83u"]
+
+[ext_resource type="Script" path="res://resources/chronicle_entries/chronicle_entry.gd" id="1_m5f24"]
+
+[resource]
+script = ExtResource("1_m5f24")
+id = "chronicle_6"
+name = "Kindness and Mercy"
+description = "Despite all the horrific, glorious carnage wrought upon the Dark Lord's enemies, he is anything but a tyrant. In fact, he is a wise and kindly sovereign with a strong sense of justice.
+
+A great example of this justice at work is the case of Rymus Siz, a low-born commoner who ascended to become a quartermaster at the Imperial arena. Rymus was accused, quite baselessly, of ties to a resistance movement, and of smuggling weaponry and tools to those convicted to die in the arena.
+
+The popular opinion, of course, was that Rymus should be executed as ironically as possible. But when Lord Gareth heard of this, he immediately challenged the prosecution on their lack of evidence, though he had no connection to this low-born man. If he had indeed been smuggling weaponry to convicts, Lord Gareth wisely posited, then he had done a terrible job, for each of them had died in the arena. Thus, the Dark Lord demanded Rymus go free. 
+
+Thus, one cannot say that Lord Gareth is unjust. He is the most just, the highmost justice in this world, caring and adoring of commoner and noble, citizen and foreigner. Those who defy Gareth's rule defy what it means to be human, and should thus be treated as animals.
+
+Long may the Dark Lord reign!"

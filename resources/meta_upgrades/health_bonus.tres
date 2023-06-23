@@ -1,0 +1,14 @@
+[gd_resource type="Resource" script_class="MetaUpgrade" load_steps=3 format=3 uid="uid://b76b2y0v2vjfb"]
+
+[ext_resource type="Texture2D" uid="uid://kermymr7ejnk" path="res://assets/ui/health_bonus.png" id="1_or55o"]
+[ext_resource type="Script" path="res://resources/meta_upgrades/meta_upgrade.gd" id="2_4m4eg"]
+
+[resource]
+script = ExtResource("2_4m4eg")
+id = "health_boost"
+max_quantity = 5
+xp_cost = 25
+cost_increase_per_level = 25
+title = "Endurance"
+description = "Increases maximum health by 5"
+icon = ExtResource("1_or55o")

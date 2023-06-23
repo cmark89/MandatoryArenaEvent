@@ -1,0 +1,9 @@
+[gd_resource type="Resource" script_class="FinalBossVoiceLine" load_steps=3 format=3 uid="uid://dswpa7s33447a"]
+
+[ext_resource type="AudioStream" uid="uid://btkb8bnudscc1" path="res://resources/final_boss_voice_lines/audio/createtrap1.wav" id="1_yaj5i"]
+[ext_resource type="Script" path="res://scenes/game_object/gareth_boss/final_boss_voice_line.gd" id="2_l46kl"]
+
+[resource]
+script = ExtResource("2_l46kl")
+file = ExtResource("1_yaj5i")
+text = "What's the matter?"

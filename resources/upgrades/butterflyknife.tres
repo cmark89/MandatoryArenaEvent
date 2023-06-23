@@ -1,0 +1,14 @@
+[gd_resource type="Resource" script_class="Ability" load_steps=4 format=3 uid="uid://bp1bjbm110ut5"]
+
+[ext_resource type="PackedScene" uid="uid://b8utpqpimpyh0" path="res://scenes/abilities/butterflyknife_ability_controller/butterflyknife_ability_controller.tscn" id="1_f485o"]
+[ext_resource type="Texture2D" uid="uid://dguf8evb5nl2b" path="res://scenes/abilities/butterflyknife_ability/butterfly_knife.png" id="2_kigpf"]
+[ext_resource type="Script" path="res://resources/upgrades/ability.gd" id="3_28nta"]
+
+[resource]
+script = ExtResource("3_28nta")
+ability_controller_scene = ExtResource("1_f485o")
+id = "butterflyknife"
+max_quantity = 1
+name = "Butterfly Knife"
+description = "Nobody ever suspects the butterfly."
+icon = ExtResource("2_kigpf")

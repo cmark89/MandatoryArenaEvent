@@ -1,0 +1,156 @@
+[gd_scene load_steps=20 format=3 uid="uid://b8mlmcdyw0qs4"]
+
+[ext_resource type="Script" path="res://scenes/game_object/exhumed_enemy/exhumed_enemy.gd" id="1_f6llo"]
+[ext_resource type="PackedScene" uid="uid://d0517nee0uimk" path="res://scenes/components/health_component.tscn" id="2_8yv7f"]
+[ext_resource type="PackedScene" uid="uid://d2e6jlxir1vj6" path="res://scenes/components/vial_drop_component.tscn" id="3_7tpr4"]
+[ext_resource type="PackedScene" uid="uid://dvfqsi8ttmls8" path="res://scenes/game_object/experience_vial/experience_vial_mid.tscn" id="4_dv1q3"]
+[ext_resource type="PackedScene" uid="uid://bgccfmwqejsry" path="res://scenes/components/health_vial_drop_component.tscn" id="5_jhbk2"]
+[ext_resource type="PackedScene" uid="uid://cv3f38dxuexue" path="res://scenes/components/velocity_component.tscn" id="6_dg8mi"]
+[ext_resource type="PackedScene" uid="uid://cvqlyaw8b4llq" path="res://scenes/components/hit_flash_component.tscn" id="7_ad2oa"]
+[ext_resource type="Shader" path="res://scenes/components/hit_flash_component.gdshader" id="8_nub32"]
+[ext_resource type="PackedScene" uid="uid://y5nwa5dnoce1" path="res://scenes/components/death_component.tscn" id="9_vceuq"]
+[ext_resource type="PackedScene" uid="uid://ek5cpdqdjubh" path="res://scenes/game_object/enemy_bullet/bullet_emitter_component.tscn" id="9_wno1e"]
+[ext_resource type="PackedScene" uid="uid://ccr5s7rjx3lgp" path="res://scenes/components/hurtbox.tscn" id="10_8b26g"]
+[ext_resource type="PackedScene" uid="uid://om4k6y38eucx" path="res://scenes/components/enemy_sound_player_component.tscn" id="12_2s1uv"]
+
+[sub_resource type="Animation" id="Animation_8tcxr"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Visuals/Sprite2D:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(0, 0)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Visuals/Sprite2D:rotation")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [0.0]
+}
+
+[sub_resource type="Animation" id="Animation_84i1h"]
+resource_name = "walk"
+length = 0.4
+loop_mode = 1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Visuals/Sprite2D:position")
+tracks/0/interp = 2
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.1, 0.3),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 0,
+"values": [Vector2(0, 0), Vector2(-1, -1), Vector2(1, -1)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Visuals/Sprite2D:rotation")
+tracks/1/interp = 2
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 0.1, 0.3),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 0,
+"values": [0.0, -0.0872665, 0.0872665]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_w03hm"]
+_data = {
+"RESET": SubResource("Animation_8tcxr"),
+"walk": SubResource("Animation_84i1h")
+}
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_ofb8g"]
+resource_local_to_scene = true
+shader = ExtResource("8_nub32")
+shader_parameter/lerp_percent = 0.0
+shader_parameter/color = Color(1, 1, 1, 1)
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_k1je1"]
+radius = 12.0
+
+[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_xdhbn"]
+load_path = "res://.godot/imported/exhumed.png-8acfdd22c77a8de06526d041fdb6f681.ctex"
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_gcnki"]
+radius = 5.0
+
+[node name="ExhumedEnemy" type="CharacterBody2D" groups=["enemy"]]
+scale = Vector2(1.15, 1.15)
+collision_layer = 8
+collision_mask = 9
+motion_mode = 1
+script = ExtResource("1_f6llo")
+bestiary_entry_id = "exhumed"
+damage = 5
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+autoplay = "walk"
+libraries = {
+"": SubResource("AnimationLibrary_w03hm")
+}
+
+[node name="HealthComponent" parent="." instance=ExtResource("2_8yv7f")]
+max_health = 30.0
+
+[node name="VialDropComponent" parent="." node_paths=PackedStringArray("health_component") instance=ExtResource("3_7tpr4")]
+health_component = NodePath("../HealthComponent")
+vial_scene = ExtResource("4_dv1q3")
+
+[node name="HealthVialDropComponent" parent="." node_paths=PackedStringArray("health_component") instance=ExtResource("5_jhbk2")]
+health_component = NodePath("../HealthComponent")
+
+[node name="VelocityComponent" parent="." instance=ExtResource("6_dg8mi")]
+max_speed = 30
+acceleration = 15.0
+
+[node name="HitFlashComponent" parent="." node_paths=PackedStringArray("health_component", "sprite") instance=ExtResource("7_ad2oa")]
+health_component = NodePath("../HealthComponent")
+sprite = NodePath("../Visuals/Sprite2D")
+hit_flash_material = SubResource("ShaderMaterial_ofb8g")
+
+[node name="BulletEmitterComponent" parent="." instance=ExtResource("9_wno1e")]
+
+[node name="DeathComponent" parent="." node_paths=PackedStringArray("health_component", "sprite") instance=ExtResource("9_vceuq")]
+health_component = NodePath("../HealthComponent")
+sprite = NodePath("../Visuals/Sprite2D")
+particle_scale = 1.15
+
+[node name="HurtboxComponent" parent="." node_paths=PackedStringArray("health_component") instance=ExtResource("10_8b26g")]
+health_component = NodePath("../HealthComponent")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="HurtboxComponent"]
+position = Vector2(0, -4)
+shape = SubResource("CircleShape2D_k1je1")
+
+[node name="Visuals" type="Node2D" parent="."]
+
+[node name="Sprite2D" type="Sprite2D" parent="Visuals"]
+texture = SubResource("CompressedTexture2D_xdhbn")
+offset = Vector2(0, -4)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(0, -3)
+shape = SubResource("CircleShape2D_gcnki")
+
+[node name="EnemySoundPlayerComponent" parent="." instance=ExtResource("12_2s1uv")]
+
+[node name="Timer" type="Timer" parent="."]
+wait_time = 30.0
+one_shot = true
+autostart = true

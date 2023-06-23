@@ -1,0 +1,13 @@
+[gd_resource type="Resource" script_class="BestiaryEntry" load_steps=3 format=3 uid="uid://y72ingmgpnsb"]
+
+[ext_resource type="Texture2D" uid="uid://b0vg7awjd2uds" path="res://scenes/game_object/ghost_enemy/tile_0121.png" id="1_sbsmi"]
+[ext_resource type="Script" path="res://resources/bestiary_entries/bestiary_entry.gd" id="2_ngb0f"]
+
+[resource]
+script = ExtResource("2_ngb0f")
+id = "ghost"
+name = "Martyr to Prophecy"
+image = ExtResource("1_sbsmi")
+description = "Little known to most of the populace, a blind hag appeared before Lord Gareth many years ago. She spoke a prophecy that a child born that very year in the lands of Eshem would bring an end to his reign. After having the hag flayed, Gareth set about a campaign of terror. All children in Eshem were gathered up and executed en masse, thus putting an end to fate's silly notions of regicide.
+
+It is ironic that the souls of those murdered children would choose to begrudge the actual hero instead of their murderer. Then again, this was never their fight in the first place."

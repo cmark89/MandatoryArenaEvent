@@ -1,0 +1,13 @@
+[gd_resource type="Resource" script_class="BestiaryEntry" load_steps=3 format=3 uid="uid://bbt0mkdoswex0"]
+
+[ext_resource type="Texture2D" uid="uid://b0gwvhamyxubp" path="res://scenes/game_object/crab_boss/tile_0110.png" id="1_dro0a"]
+[ext_resource type="Script" path="res://resources/bestiary_entries/bestiary_entry.gd" id="2_vq2ny"]
+
+[resource]
+script = ExtResource("2_vq2ny")
+id = "boss_crab"
+name = "Magically Embiggened Crab"
+image = ExtResource("1_dro0a")
+description = "A particularly vicious specimen from Lord Gareth's menagerie, this razor crab underwent experimental embiggening and enhancement at the Academy. The result was a resounding success.
+
+With plating as hard as steel, claws as sharp as any blade ever forged, and the ability to conjure a storm of magical energy to strip the flesh from its victim, there is no more fearsome creature to face in the arena."

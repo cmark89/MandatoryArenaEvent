@@ -1,0 +1,13 @@
+[gd_resource type="Resource" script_class="BestiaryEntry" load_steps=3 format=3 uid="uid://rqysjd6oilvv"]
+
+[ext_resource type="Texture2D" uid="uid://d04tk425inx07" path="res://scenes/game_object/basic_enemy/basic_enemy.png" id="1_4ip56"]
+[ext_resource type="Script" path="res://resources/bestiary_entries/bestiary_entry.gd" id="2_t86px"]
+
+[resource]
+script = ExtResource("2_t86px")
+id = "vermin"
+name = "Vermin"
+image = ExtResource("1_4ip56")
+description = "By way of incompetent zoning and city planning, the battle arena Lord Gareth uses for executions happens to sit directly atop a network of old sewer lines. In addition to giving the convicted's final moments the distinct background aroma of raw, feculent sewage, this has a darker, more horrible effect. 
+
+As the rats swarm in a tide of living fur and fangs, drawn by the trumpets of battle and smell of fresh meat, the convicted invariably feels a rush of hope as the vermin fall by the dozen to the crude weaponry granted them by the quartermasters. Once the real battle begins, that hope slips deliciously away."

@@ -1,0 +1,447 @@
+[gd_scene load_steps=3 format=3 uid="uid://d0dtaiggqkw0r"]
+
+[ext_resource type="Script" path="res://scenes/main/credits.gd" id="1_5i1u4"]
+[ext_resource type="PackedScene" uid="uid://cf1dxk0u24mtl" path="res://scenes/ui/sound_button.tscn" id="20_vw6hb"]
+
+[node name="Credits" type="CanvasLayer"]
+layer = 2
+script = ExtResource("1_5i1u4")
+
+[node name="MarginContainer" type="MarginContainer" parent="."]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="MarginContainer3" type="MarginContainer" parent="MarginContainer"]
+layout_mode = 2
+size_flags_horizontal = 0
+size_flags_vertical = 8
+theme_override_constants/margin_left = 4
+theme_override_constants/margin_bottom = 4
+
+[node name="BackButton" parent="MarginContainer/MarginContainer3" instance=ExtResource("20_vw6hb")]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(50, 0)
+layout_mode = 2
+size_flags_horizontal = 0
+text = "Back"
+
+[node name="PanelContainer" type="PanelContainer" parent="MarginContainer"]
+custom_minimum_size = Vector2(450, 350)
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+
+[node name="ScrollContainer" type="ScrollContainer" parent="MarginContainer/PanelContainer"]
+layout_mode = 2
+
+[node name="VBoxContainer" type="VBoxContainer" parent="MarginContainer/PanelContainer/ScrollContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+
+[node name="Label" type="Label" parent="MarginContainer/PanelContainer/ScrollContainer/VBoxContainer"]
+layout_mode = 2
+theme_override_colors/font_color = Color(0.247059, 0.14902, 0.192157, 1)
+theme_override_font_sizes/font_size = 32
+text = "MANDATORY ARENA EVENT"
+horizontal_alignment = 1
+
+[node name="Label2" type="Label" parent="MarginContainer/PanelContainer/ScrollContainer/VBoxContainer"]
+layout_mode = 2
+theme_override_colors/font_color = Color(0.247059, 0.14902, 0.192157, 1)
+text = "Created by Objectively Radical Games"
+horizontal_alignment = 1
+
+[node name="Spacing" type="Label" parent="MarginContainer/PanelContainer/ScrollContainer/VBoxContainer"]
+modulate = Color(1, 1, 1, 0)
+layout_mode = 2
+theme_override_colors/font_color = Color(0.247059, 0.14902, 0.192157, 1)
+text = "Created by Objectively Radical Games"
+horizontal_alignment = 1
+
+[node name="Label3" type="Label" parent="MarginContainer/PanelContainer/ScrollContainer/VBoxContainer"]
+layout_mode = 2
+theme_override_colors/font_color = Color(0.247059, 0.14902, 0.192157, 1)
+text = "GAME DESIGN & PROGRAMMING"
+horizontal_alignment = 1
+
+[node name="Label4" type="Label" parent="MarginContainer/PanelContainer/ScrollContainer/VBoxContainer"]
+layout_mode = 2
+theme_override_colors/font_color = Color(0.247059, 0.14902, 0.192157, 1)
+text = "Corey Mark"
+horizontal_alignment = 1
+
+[node name="Spacing3" type="Label" parent="MarginContainer/PanelContainer/ScrollContainer/VBoxContainer"]
+modulate = Color(1, 1, 1, 0)
+layout_mode = 2
+theme_override_colors/font_color = Color(0.247059, 0.14902, 0.192157, 1)
+text = "Sound Effects Provided By"
+horizontal_alignment = 1
+
+[node name="Label19" type="Label" parent="MarginContainer/PanelContainer/ScrollContainer/VBoxContainer"]
+layout_mode = 2
+theme_override_colors/font_color = Color(0.247059, 0.14902, 0.192157, 1)
+text = "ART ASSETS PROVIDED BY"
+horizontal_alignment = 1
+
+[node name="Label20" type="Label" parent="MarginContainer/PanelContainer/ScrollContainer/VBoxContainer"]
+layout_mode = 2
+theme_override_colors/font_color = Color(0.247059, 0.14902, 0.192157, 1)
+text = "Kenney (kenney.nl)
+Firebelley Games (https://firebelley.com)
+"
+horizontal_alignment = 1
+
+[node name="Spacing10" type="Label" parent="MarginContainer/PanelContainer/ScrollContainer/VBoxContainer"]
+modulate = Color(1, 1, 1, 0)
+layout_mode = 2
+theme_override_colors/font_color = Color(0.247059, 0.14902, 0.192157, 1)
+text = "Sound Effects Provided By"
+horizontal_alignment = 1
+
+[node name="Label7" type="Label" parent="MarginContainer/PanelContainer/ScrollContainer/VBoxContainer"]
+layout_mode = 2
+theme_override_colors/font_color = Color(0.247059, 0.14902, 0.192157, 1)
+text = "SOUND EFFECTS PROVIDED BY"
+horizontal_alignment = 1
+
+[node name="Label8" type="Label" parent="MarginContainer/PanelContainer/ScrollContainer/VBoxContainer"]
+layout_mode = 2
+theme_override_colors/font_color = Color(0.247059, 0.14902, 0.192157, 1)
+text = "Kenney (kenney.nl)
+Zapsplat.com
+And our friends at freesound.org:
+"
+horizontal_alignment = 1
+
+[node name="GridContainer" type="GridContainer" parent="MarginContainer/PanelContainer/ScrollContainer/VBoxContainer"]
+custom_minimum_size = Vector2(0.109, 0)
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+theme_override_constants/h_separation = 28
+columns = 4
+
+[node name="Label9" type="Label" parent="MarginContainer/PanelContainer/ScrollContainer/VBoxContainer/GridContainer"]
+layout_mode = 2
+theme_override_colors/font_color = Color(0.247059, 0.14902, 0.192157, 1)
+text = "afterguard
+"
+horizontal_alignment = 1
+
+[node name="Label10" type="Label" parent="MarginContainer/PanelContainer/ScrollContainer/VBoxContainer/GridContainer"]
+layout_mode = 2
+theme_override_colors/font_color = Color(0.247059, 0.14902, 0.192157, 1)
+text = "Benboncan"
+horizontal_alignment = 1
+
+[node name="Label11" type="Label" parent="MarginContainer/PanelContainer/ScrollContainer/VBoxContainer/GridContainer"]
+layout_mode = 2
+theme_override_colors/font_color = Color(0.247059, 0.14902, 0.192157, 1)
+text = "Black Snow"
+horizontal_alignment = 1
+
+[node name="Label12" type="Label" parent="MarginContainer/PanelContainer/ScrollContainer/VBoxContainer/GridContainer"]
+layout_mode = 2
+theme_override_colors/font_color = Color(0.247059, 0.14902, 0.192157, 1)
+text = "CGEffex"
+horizontal_alignment = 1
+
+[node name="Label13" type="Label" parent="MarginContainer/PanelContainer/ScrollContainer/VBoxContainer/GridContainer"]
+layout_mode = 2
+theme_override_colors/font_color = Color(0.247059, 0.14902, 0.192157, 1)
+text = "cinevid"
+horizontal_alignment = 1
+
+[node name="Label14" type="Label" parent="MarginContainer/PanelContainer/ScrollContainer/VBoxContainer/GridContainer"]
+layout_mode = 2
+theme_override_colors/font_color = Color(0.247059, 0.14902, 0.192157, 1)
+text = "CosmicEmbers"
+horizontal_alignment = 1
+
+[node name="Label15" type="Label" parent="MarginContainer/PanelContainer/ScrollContainer/VBoxContainer/GridContainer"]
+layout_mode = 2
+theme_override_colors/font_color = Color(0.247059, 0.14902, 0.192157, 1)
+text = "djahren"
+horizontal_alignment = 1
+
+[node name="Label16" type="Label" parent="MarginContainer/PanelContainer/ScrollContainer/VBoxContainer/GridContainer"]
+layout_mode = 2
+theme_override_colors/font_color = Color(0.247059, 0.14902, 0.192157, 1)
+text = "dobroide"
+horizontal_alignment = 1
+
+[node name="Label17" type="Label" parent="MarginContainer/PanelContainer/ScrollContainer/VBoxContainer/GridContainer"]
+layout_mode = 2
+theme_override_colors/font_color = Color(0.247059, 0.14902, 0.192157, 1)
+text = "erdie"
+horizontal_alignment = 1
+
+[node name="Label18" type="Label" parent="MarginContainer/PanelContainer/ScrollContainer/VBoxContainer/GridContainer"]
+layout_mode = 2
+theme_override_colors/font_color = Color(0.247059, 0.14902, 0.192157, 1)
+text = "filipe chagas"
+horizontal_alignment = 1
+
+[node name="Label19" type="Label" parent="MarginContainer/PanelContainer/ScrollContainer/VBoxContainer/GridContainer"]
+layout_mode = 2
+theme_override_colors/font_color = Color(0.247059, 0.14902, 0.192157, 1)
+text = "herbertboland"
+horizontal_alignment = 1
+
+[node name="Label20" type="Label" parent="MarginContainer/PanelContainer/ScrollContainer/VBoxContainer/GridContainer"]
+layout_mode = 2
+theme_override_colors/font_color = Color(0.247059, 0.14902, 0.192157, 1)
+text = "iedlabs"
+horizontal_alignment = 1
+
+[node name="Label5" type="Label" parent="MarginContainer/PanelContainer/ScrollContainer/VBoxContainer/GridContainer"]
+layout_mode = 2
+theme_override_colors/font_color = Color(0.247059, 0.14902, 0.192157, 1)
+text = "jobro"
+horizontal_alignment = 1
+
+[node name="Label6" type="Label" parent="MarginContainer/PanelContainer/ScrollContainer/VBoxContainer/GridContainer"]
+layout_mode = 2
+theme_override_colors/font_color = Color(0.247059, 0.14902, 0.192157, 1)
+text = "joelaudio"
+horizontal_alignment = 1
+
+[node name="Label7" type="Label" parent="MarginContainer/PanelContainer/ScrollContainer/VBoxContainer/GridContainer"]
+layout_mode = 2
+theme_override_colors/font_color = Color(0.247059, 0.14902, 0.192157, 1)
+text = "jymdavis"
+horizontal_alignment = 1
+
+[node name="Label8" type="Label" parent="MarginContainer/PanelContainer/ScrollContainer/VBoxContainer/GridContainer"]
+layout_mode = 2
+theme_override_colors/font_color = Color(0.247059, 0.14902, 0.192157, 1)
+text = "kibibu"
+horizontal_alignment = 1
+
+[node name="Label21" type="Label" parent="MarginContainer/PanelContainer/ScrollContainer/VBoxContainer/GridContainer"]
+layout_mode = 2
+theme_override_colors/font_color = Color(0.247059, 0.14902, 0.192157, 1)
+text = "kleanthism"
+horizontal_alignment = 1
+
+[node name="Label22" type="Label" parent="MarginContainer/PanelContainer/ScrollContainer/VBoxContainer/GridContainer"]
+layout_mode = 2
+theme_override_colors/font_color = Color(0.247059, 0.14902, 0.192157, 1)
+text = "lolamadeus"
+horizontal_alignment = 1
+
+[node name="Label23" type="Label" parent="MarginContainer/PanelContainer/ScrollContainer/VBoxContainer/GridContainer"]
+layout_mode = 2
+theme_override_colors/font_color = Color(0.247059, 0.14902, 0.192157, 1)
+text = "muses212"
+horizontal_alignment = 1
+
+[node name="Label24" type="Label" parent="MarginContainer/PanelContainer/ScrollContainer/VBoxContainer/GridContainer"]
+layout_mode = 2
+theme_override_colors/font_color = Color(0.247059, 0.14902, 0.192157, 1)
+text = "qat"
+horizontal_alignment = 1
+
+[node name="Label25" type="Label" parent="MarginContainer/PanelContainer/ScrollContainer/VBoxContainer/GridContainer"]
+layout_mode = 2
+theme_override_colors/font_color = Color(0.247059, 0.14902, 0.192157, 1)
+text = "qubodup"
+horizontal_alignment = 1
+
+[node name="Label26" type="Label" parent="MarginContainer/PanelContainer/ScrollContainer/VBoxContainer/GridContainer"]
+layout_mode = 2
+theme_override_colors/font_color = Color(0.247059, 0.14902, 0.192157, 1)
+text = "robkinsons"
+horizontal_alignment = 1
+
+[node name="Label27" type="Label" parent="MarginContainer/PanelContainer/ScrollContainer/VBoxContainer/GridContainer"]
+layout_mode = 2
+theme_override_colors/font_color = Color(0.247059, 0.14902, 0.192157, 1)
+text = "slave2thelight"
+horizontal_alignment = 1
+
+[node name="Label28" type="Label" parent="MarginContainer/PanelContainer/ScrollContainer/VBoxContainer/GridContainer"]
+layout_mode = 2
+theme_override_colors/font_color = Color(0.247059, 0.14902, 0.192157, 1)
+text = "snowflakes"
+horizontal_alignment = 1
+
+[node name="Label29" type="Label" parent="MarginContainer/PanelContainer/ScrollContainer/VBoxContainer/GridContainer"]
+layout_mode = 2
+theme_override_colors/font_color = Color(0.247059, 0.14902, 0.192157, 1)
+text = "stereostereo"
+horizontal_alignment = 1
+
+[node name="Label30" type="Label" parent="MarginContainer/PanelContainer/ScrollContainer/VBoxContainer/GridContainer"]
+layout_mode = 2
+theme_override_colors/font_color = Color(0.247059, 0.14902, 0.192157, 1)
+text = "velvorn"
+horizontal_alignment = 1
+
+[node name="Label31" type="Label" parent="MarginContainer/PanelContainer/ScrollContainer/VBoxContainer/GridContainer"]
+layout_mode = 2
+theme_override_colors/font_color = Color(0.247059, 0.14902, 0.192157, 1)
+text = "xenognosis"
+horizontal_alignment = 1
+
+[node name="Label32" type="Label" parent="MarginContainer/PanelContainer/ScrollContainer/VBoxContainer/GridContainer"]
+layout_mode = 2
+theme_override_colors/font_color = Color(0.247059, 0.14902, 0.192157, 1)
+text = "zstrees1"
+horizontal_alignment = 1
+
+[node name="Spacing4" type="Label" parent="MarginContainer/PanelContainer/ScrollContainer/VBoxContainer"]
+modulate = Color(1, 1, 1, 0)
+layout_mode = 2
+theme_override_colors/font_color = Color(0.268, 0.268, 0.4, 1)
+text = "Sound Effects Provided By"
+horizontal_alignment = 1
+
+[node name="Label9" type="Label" parent="MarginContainer/PanelContainer/ScrollContainer/VBoxContainer"]
+layout_mode = 2
+theme_override_colors/font_color = Color(0.247059, 0.14902, 0.192157, 1)
+text = "MUSIC
+"
+horizontal_alignment = 1
+
+[node name="MarginContainer" type="MarginContainer" parent="MarginContainer/PanelContainer/ScrollContainer/VBoxContainer"]
+layout_mode = 2
+theme_override_constants/margin_left = 127
+
+[node name="Label11" type="Label" parent="MarginContainer/PanelContainer/ScrollContainer/VBoxContainer/MarginContainer"]
+layout_mode = 2
+size_flags_horizontal = 0
+theme_override_colors/font_color = Color(0.247059, 0.14902, 0.192157, 1)
+text = "TITLE THEME:"
+horizontal_alignment = 1
+
+[node name="Label11" type="Label" parent="MarginContainer/PanelContainer/ScrollContainer/VBoxContainer"]
+layout_mode = 2
+theme_override_colors/font_color = Color(0.247059, 0.14902, 0.192157, 1)
+text = "\"Enter the Arena\""
+horizontal_alignment = 1
+
+[node name="Label12" type="Label" parent="MarginContainer/PanelContainer/ScrollContainer/VBoxContainer"]
+layout_mode = 2
+theme_override_colors/font_color = Color(0.247059, 0.14902, 0.192157, 1)
+text = "by Corey Mark"
+horizontal_alignment = 1
+
+[node name="Spacing5" type="Label" parent="MarginContainer/PanelContainer/ScrollContainer/VBoxContainer"]
+modulate = Color(1, 1, 1, 0)
+layout_mode = 2
+theme_override_colors/font_color = Color(0.268, 0.268, 0.4, 1)
+text = "Sound Effects Provided By"
+horizontal_alignment = 1
+
+[node name="MarginContainer2" type="MarginContainer" parent="MarginContainer/PanelContainer/ScrollContainer/VBoxContainer"]
+layout_mode = 2
+theme_override_constants/margin_left = 127
+
+[node name="Label11" type="Label" parent="MarginContainer/PanelContainer/ScrollContainer/VBoxContainer/MarginContainer2"]
+layout_mode = 2
+size_flags_horizontal = 0
+theme_override_colors/font_color = Color(0.247059, 0.14902, 0.192157, 1)
+text = "MAIN GAME THEME:"
+horizontal_alignment = 1
+
+[node name="Label13" type="Label" parent="MarginContainer/PanelContainer/ScrollContainer/VBoxContainer"]
+layout_mode = 2
+theme_override_colors/font_color = Color(0.247059, 0.14902, 0.192157, 1)
+text = "\"Survive or Die (If You Want To, I Guess)\""
+horizontal_alignment = 1
+
+[node name="Label14" type="Label" parent="MarginContainer/PanelContainer/ScrollContainer/VBoxContainer"]
+layout_mode = 2
+theme_override_colors/font_color = Color(0.247059, 0.14902, 0.192157, 1)
+text = "by Corey Mark"
+horizontal_alignment = 1
+
+[node name="Spacing6" type="Label" parent="MarginContainer/PanelContainer/ScrollContainer/VBoxContainer"]
+modulate = Color(1, 1, 1, 0)
+layout_mode = 2
+theme_override_colors/font_color = Color(0.268, 0.268, 0.4, 1)
+text = "Sound Effects Provided By"
+horizontal_alignment = 1
+
+[node name="MarginContainer3" type="MarginContainer" parent="MarginContainer/PanelContainer/ScrollContainer/VBoxContainer"]
+layout_mode = 2
+theme_override_constants/margin_left = 127
+
+[node name="Label11" type="Label" parent="MarginContainer/PanelContainer/ScrollContainer/VBoxContainer/MarginContainer3"]
+layout_mode = 2
+size_flags_horizontal = 0
+theme_override_colors/font_color = Color(0.247059, 0.14902, 0.192157, 1)
+text = "FINAL BOSS THEME:"
+horizontal_alignment = 1
+
+[node name="Label15" type="Label" parent="MarginContainer/PanelContainer/ScrollContainer/VBoxContainer"]
+layout_mode = 2
+theme_override_colors/font_color = Color(0.247059, 0.14902, 0.192157, 1)
+text = "\"Pray I Never Find You\""
+horizontal_alignment = 1
+
+[node name="Label16" type="Label" parent="MarginContainer/PanelContainer/ScrollContainer/VBoxContainer"]
+layout_mode = 2
+theme_override_colors/font_color = Color(0.247059, 0.14902, 0.192157, 1)
+text = "by Corey Mark"
+horizontal_alignment = 1
+
+[node name="Spacing7" type="Label" parent="MarginContainer/PanelContainer/ScrollContainer/VBoxContainer"]
+modulate = Color(1, 1, 1, 0)
+layout_mode = 2
+theme_override_colors/font_color = Color(0.268, 0.268, 0.4, 1)
+text = "Sound Effects Provided By"
+horizontal_alignment = 1
+
+[node name="MarginContainer4" type="MarginContainer" parent="MarginContainer/PanelContainer/ScrollContainer/VBoxContainer"]
+layout_mode = 2
+theme_override_constants/margin_left = 127
+
+[node name="Label11" type="Label" parent="MarginContainer/PanelContainer/ScrollContainer/VBoxContainer/MarginContainer4"]
+layout_mode = 2
+size_flags_horizontal = 0
+theme_override_colors/font_color = Color(0.247059, 0.14902, 0.192157, 1)
+text = "ENDING THEME:"
+horizontal_alignment = 1
+
+[node name="Label17" type="Label" parent="MarginContainer/PanelContainer/ScrollContainer/VBoxContainer"]
+layout_mode = 2
+theme_override_colors/font_color = Color(0.247059, 0.14902, 0.192157, 1)
+text = "\"When No Blood Remains to Spill\""
+horizontal_alignment = 1
+
+[node name="Label18" type="Label" parent="MarginContainer/PanelContainer/ScrollContainer/VBoxContainer"]
+layout_mode = 2
+theme_override_colors/font_color = Color(0.247059, 0.14902, 0.192157, 1)
+text = "by Corey Mark"
+horizontal_alignment = 1
+
+[node name="Spacing8" type="Label" parent="MarginContainer/PanelContainer/ScrollContainer/VBoxContainer"]
+modulate = Color(1, 1, 1, 0)
+layout_mode = 2
+theme_override_colors/font_color = Color(0.268, 0.268, 0.4, 1)
+text = "Sound Effects Provided By"
+horizontal_alignment = 1
+
+[node name="Label10" type="Label" parent="MarginContainer/PanelContainer/ScrollContainer/VBoxContainer"]
+layout_mode = 2
+theme_override_colors/font_color = Color(0.247059, 0.14902, 0.192157, 1)
+text = "SPECIAL THANKS TO"
+horizontal_alignment = 1
+
+[node name="Label21" type="Label" parent="MarginContainer/PanelContainer/ScrollContainer/VBoxContainer"]
+layout_mode = 2
+theme_override_colors/font_color = Color(0.247059, 0.14902, 0.192157, 1)
+text = "Firebelley Games, for the amazing Godot course on Udemy"
+horizontal_alignment = 1
+
+[node name="Label22" type="Label" parent="MarginContainer/PanelContainer/ScrollContainer/VBoxContainer"]
+layout_mode = 2
+theme_override_colors/font_color = Color(0.247059, 0.14902, 0.192157, 1)
+text = "and YOU for playing this game!"
+horizontal_alignment = 1

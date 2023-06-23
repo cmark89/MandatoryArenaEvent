@@ -1,0 +1,28 @@
+[gd_scene load_steps=3 format=3 uid="uid://cjo4ixi2mchkc"]
+
+[ext_resource type="Script" path="res://scenes/ui/chosen_weapon.gd" id="1_2f3tv"]
+[ext_resource type="Texture2D" uid="uid://cp4jaeecfgtrq" path="res://assets/ui/weapon_slot.png" id="1_y1tl1"]
+
+[node name="WeaponSlot" type="MarginContainer"]
+offset_right = 18.0
+offset_bottom = 18.0
+script = ExtResource("1_2f3tv")
+
+[node name="Box" type="TextureRect" parent="."]
+custom_minimum_size = Vector2(18, 18)
+layout_mode = 2
+texture = ExtResource("1_y1tl1")
+
+[node name="Icon" type="TextureRect" parent="Box"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -8.0
+offset_top = -8.0
+offset_right = 8.0
+offset_bottom = 8.0
+grow_horizontal = 2
+grow_vertical = 2

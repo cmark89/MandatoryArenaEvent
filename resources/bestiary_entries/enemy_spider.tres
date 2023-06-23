@@ -1,0 +1,15 @@
+[gd_resource type="Resource" script_class="BestiaryEntry" load_steps=3 format=3 uid="uid://d23wkomitem56"]
+
+[ext_resource type="Texture2D" uid="uid://ctfjqm7h11kat" path="res://scenes/game_object/spider_enemy/spider_enemy.png" id="1_wtfo2"]
+[ext_resource type="Script" path="res://resources/bestiary_entries/bestiary_entry.gd" id="2_gmg88"]
+
+[resource]
+script = ExtResource("2_gmg88")
+id = "spider"
+name = "Orbweaver"
+image = ExtResource("1_wtfo2")
+description = "With eight legs, vicious fangs, and a deadly intellect, these wolf-sized spiders are one of the most dangerous natural creatures in all of Urlandis. After initially being discovered in the southern jungles of Oka'laki, explorers brought eggs of the species back to Nordal as a gift to the eccentric King. There, they thrived within the royal menagerie until the Kingdom fell four decades ago.
+
+When the Dark Lord Gareth conquered Nordal and saw the menageries there, he was thrilled by the nightmarish arachnids. He ordered his biologists and wranglers to bring the swarm back to the capital and improve upon the selective breeding Nordal engaged in. 
+
+Since then, the Orbweavers have become faster, deadlier, and exponentially more aggressive. Entire warrens beneath the city have been excavated and refitted as nurseries and hunting grounds for the monsters. Shortly after the establishment of the breeding programs, however, one tribe of Orbweavers rebelled against their handlers, and an entire wing of the cavern system had to be sealed off. One shudders to imagine what has since become of that section of the underground, and what nightmarish vengeance those Orbweavers could be scheming up even now."

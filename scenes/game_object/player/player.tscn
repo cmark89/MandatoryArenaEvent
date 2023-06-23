@@ -1,0 +1,185 @@
+[gd_scene load_steps=16 format=3 uid="uid://ds3gmrvfcgrag"]
+
+[ext_resource type="Script" path="res://scenes/game_object/player/player.gd" id="1_ktp7q"]
+[ext_resource type="Texture2D" uid="uid://doh0b53yqrb6w" path="res://scenes/game_object/player/player.png" id="2_1p0mi"]
+[ext_resource type="PackedScene" uid="uid://d0517nee0uimk" path="res://scenes/components/health_component.tscn" id="2_7nn3i"]
+[ext_resource type="PackedScene" uid="uid://dpd4rbaacfrmx" path="res://scenes/abilities/sword_ability_controller/sword_ability_controller.tscn" id="2_ky6qa"]
+[ext_resource type="PackedScene" uid="uid://cv3f38dxuexue" path="res://scenes/components/velocity_component.tscn" id="2_x6wsi"]
+[ext_resource type="PackedScene" uid="uid://cvqlyaw8b4llq" path="res://scenes/components/hit_flash_component.tscn" id="4_htqvv"]
+[ext_resource type="Shader" path="res://scenes/components/hit_flash_component.gdshader" id="5_l4l5r"]
+[ext_resource type="AudioStream" uid="uid://cgmw8kiwwsi1m" path="res://assets/audio/playerdamage.wav" id="8_daeif"]
+
+[sub_resource type="Animation" id="Animation_tahcq"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Visuals/Sprite2D:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(0, 0)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Visuals/Sprite2D:rotation")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [0.0]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("Visuals/Sprite2D:scale")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(1, 1)]
+}
+
+[sub_resource type="Animation" id="Animation_nl7hr"]
+resource_name = "walk"
+length = 0.4
+loop_mode = 1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Visuals/Sprite2D:position")
+tracks/0/interp = 2
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.1, 0.3),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 0,
+"values": [Vector2(0, 0), Vector2(0, -3), Vector2(0, 0)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Visuals/Sprite2D:rotation")
+tracks/1/interp = 2
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 0.1, 0.2, 0.403822),
+"transitions": PackedFloat32Array(1, 1, 1, 1),
+"update": 0,
+"values": [0.0, 0.261799, -0.261799, -0.089084]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("Visuals/Sprite2D:scale")
+tracks/2/interp = 2
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0, 0.1, 0.3, 0.4),
+"transitions": PackedFloat32Array(1, 2.63902, 2.14355, 1),
+"update": 0,
+"values": [Vector2(1, 1), Vector2(0.75, 1.1), Vector2(1.1, 0.75), Vector2(1, 1)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_27jwt"]
+_data = {
+"RESET": SubResource("Animation_tahcq"),
+"walk": SubResource("Animation_nl7hr")
+}
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_j0dd0"]
+resource_local_to_scene = true
+shader = ExtResource("5_l4l5r")
+shader_parameter/lerp_percent = 0.0
+shader_parameter/color = Color(1, 1, 1, 1)
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_8rpq4"]
+radius = 20.0
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_1v1jt"]
+radius = 7.0
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_h8x08"]
+radius = 5.0
+
+[node name="Player" type="CharacterBody2D" groups=["player"]]
+collision_layer = 2
+motion_mode = 1
+script = ExtResource("1_ktp7q")
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+libraries = {
+"": SubResource("AnimationLibrary_27jwt")
+}
+
+[node name="VelocityComponent" parent="." instance=ExtResource("2_x6wsi")]
+max_speed = 80
+acceleration = 25.0
+
+[node name="HealthComponent" parent="." instance=ExtResource("2_7nn3i")]
+max_health = 25.0
+
+[node name="Abilities" type="Node" parent="."]
+
+[node name="SwordAbilityController" parent="Abilities" instance=ExtResource("2_ky6qa")]
+
+[node name="DamageIntervalTimer" type="Timer" parent="."]
+wait_time = 0.5
+one_shot = true
+
+[node name="HitFlashComponent" parent="." node_paths=PackedStringArray("health_component", "sprite") instance=ExtResource("4_htqvv")]
+health_component = NodePath("../HealthComponent")
+sprite = NodePath("../Visuals/Sprite2D")
+damage_flash_color = Color(1, 0, 0, 1)
+hit_flash_material = SubResource("ShaderMaterial_j0dd0")
+
+[node name="HealthBar" type="ProgressBar" parent="."]
+custom_minimum_size = Vector2(32, 6)
+offset_left = -16.0
+offset_top = -25.0
+offset_right = 16.0
+offset_bottom = -19.0
+pivot_offset = Vector2(16, 3)
+max_value = 1.0
+value = 0.5
+show_percentage = false
+
+[node name="PickupArea2D" type="Area2D" parent="."]
+collision_layer = 16
+collision_mask = 0
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="PickupArea2D"]
+position = Vector2(0, -5)
+shape = SubResource("CircleShape2D_8rpq4")
+
+[node name="CollisionArea2D" type="Area2D" parent="."]
+collision_layer = 0
+collision_mask = 8
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="CollisionArea2D"]
+position = Vector2(0, -6)
+shape = SubResource("CircleShape2D_1v1jt")
+debug_color = Color(0.843137, 0.294118, 0.615686, 0.419608)
+
+[node name="Visuals" type="Node2D" parent="."]
+
+[node name="Sprite2D" type="Sprite2D" parent="Visuals"]
+texture = ExtResource("2_1p0mi")
+offset = Vector2(0, -8)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(0, -5)
+shape = SubResource("CircleShape2D_h8x08")
+
+[node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("8_daeif")
+max_distance = 300.0
+max_polyphony = 5

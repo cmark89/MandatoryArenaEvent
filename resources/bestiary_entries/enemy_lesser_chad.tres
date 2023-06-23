@@ -1,0 +1,15 @@
+[gd_resource type="Resource" script_class="BestiaryEntry" load_steps=3 format=3 uid="uid://q1aef1g6i3ah"]
+
+[ext_resource type="Texture2D" uid="uid://cvwebgnn4gm3" path="res://scenes/game_object/chad_enemy/chad_enemy.png" id="1_bgb54"]
+[ext_resource type="Script" path="res://resources/bestiary_entries/bestiary_entry.gd" id="2_fdw2s"]
+
+[resource]
+script = ExtResource("2_fdw2s")
+id = "lesser_chad"
+name = "Lesser Chad"
+image = ExtResource("1_bgb54")
+description = "Among the most peculiar of the arena's denizens, the Lesser Chad is a magical, lab-grown reproduction of the Imperial hero Chadicus the Valiant. Originally conceived as clones to carry on Chad's legacy should the unthinkable befall him, it soon became clear that these simulacra were at best flawed, and at worst utterly depraved and loathsome. 
+
+However, by the time these results were discovered, the Chad Cloning Project had already absorbed too much capital to be declared a failure. Instead, the magi responsible reframed their setbacks as transcendently avant garde efforts to create completely expendable gladiatorial beasts, uncannily human and yet lacking any semblance of a mind.
+
+When the magi brought the first clutch of Lesser Chads before Lord Gareth, the dark monarch was highly pleased. Chadicus the Valiant, however, was affronted at the results. He believed that the gladiatorial pursuits were too noble to be blemished by such unsightly creatures. But Chadicus could in no way gainsay the Dark Lord, and so the Lesser Chad project was expanded and deeply married to the arena's operation."

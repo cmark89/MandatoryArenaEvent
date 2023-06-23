@@ -1,0 +1,12 @@
+[gd_resource type="Resource" script_class="AbilityUpgrade" load_steps=3 format=3 uid="uid://cq3d3y5w6n1n7"]
+
+[ext_resource type="Script" path="res://resources/upgrades/ability_upgrade.gd" id="1_78lma"]
+[ext_resource type="Texture2D" uid="uid://d0ys32y4dw32p" path="res://scenes/abilities/axe_ability/axe.png" id="1_io4rm"]
+
+[resource]
+script = ExtResource("1_78lma")
+id = "axe_damage"
+max_quantity = 0
+name = "Sharpened Axe"
+description = "Increase base axe damage by 1"
+icon = ExtResource("1_io4rm")

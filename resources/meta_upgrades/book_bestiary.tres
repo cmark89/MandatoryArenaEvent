@@ -1,0 +1,13 @@
+[gd_resource type="Resource" script_class="MetaUpgrade" load_steps=3 format=3 uid="uid://cml17axppauyh"]
+
+[ext_resource type="Texture2D" uid="uid://6lahp35lnsg" path="res://assets/ui/bestiary.png" id="1_2oig6"]
+[ext_resource type="Script" path="res://resources/meta_upgrades/meta_upgrade.gd" id="2_y138n"]
+
+[resource]
+script = ExtResource("2_y138n")
+id = "book_bestiary"
+max_quantity = 1
+xp_cost = 100
+title = "Bestiary"
+description = "Unlocks a Bestiary to study your foes!"
+icon = ExtResource("1_2oig6")

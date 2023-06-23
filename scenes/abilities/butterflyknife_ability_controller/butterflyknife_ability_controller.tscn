@@ -1,0 +1,12 @@
+[gd_scene load_steps=3 format=3 uid="uid://b8utpqpimpyh0"]
+
+[ext_resource type="Script" path="res://scenes/abilities/butterflyknife_ability_controller/butterflyknife_ability_controller.gd" id="1_6h8sq"]
+[ext_resource type="PackedScene" uid="uid://77sdnqmmwxfm" path="res://scenes/abilities/butterflyknife_ability/butterflyknife_ability.tscn" id="2_u007g"]
+
+[node name="ButterflyKnifeAbilityController" type="Node"]
+script = ExtResource("1_6h8sq")
+butterflyknife_ability_scene = ExtResource("2_u007g")
+
+[node name="Timer" type="Timer" parent="."]
+wait_time = 3.0
+autostart = true

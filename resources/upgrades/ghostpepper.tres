@@ -1,0 +1,14 @@
+[gd_resource type="Resource" script_class="Ability" load_steps=4 format=3 uid="uid://c41rfhcbpa861"]
+
+[ext_resource type="PackedScene" uid="uid://c72erv28a701q" path="res://scenes/abilities/ghostpepper_ability_controller/ghostpepper_ability_controller.tscn" id="1_pe4xs"]
+[ext_resource type="Texture2D" uid="uid://divs7anatrs5v" path="res://assets/ui/ghost_pepper.png" id="2_evhxm"]
+[ext_resource type="Script" path="res://resources/upgrades/ability.gd" id="3_qbtur"]
+
+[resource]
+script = ExtResource("3_qbtur")
+ability_controller_scene = ExtResource("1_pe4xs")
+id = "ghostpepper"
+max_quantity = 1
+name = "Ghost Pepper"
+description = "Summon ghost clones that explode when touched!"
+icon = ExtResource("2_evhxm")

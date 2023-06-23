@@ -1,0 +1,14 @@
+[gd_resource type="Resource" script_class="MetaUpgrade" load_steps=3 format=3 uid="uid://cfxnph8qf5r3v"]
+
+[ext_resource type="Texture2D" uid="uid://cyk34njjdq61g" path="res://assets/ui/health_regen.png" id="1_i8gfr"]
+[ext_resource type="Script" path="res://resources/meta_upgrades/meta_upgrade.gd" id="2_4008u"]
+
+[resource]
+script = ExtResource("2_4008u")
+id = "health_regen"
+max_quantity = 5
+xp_cost = 100
+cost_increase_per_level = 100
+title = "Regeneration"
+description = "Regenerates 1 health every 30 seconds"
+icon = ExtResource("1_i8gfr")

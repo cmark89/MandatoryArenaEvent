@@ -1,0 +1,15 @@
+[gd_resource type="Resource" script_class="BestiaryEntry" load_steps=3 format=3 uid="uid://6r5vs364rkbf"]
+
+[ext_resource type="Texture2D" uid="uid://c3jums436hfpu" path="res://scenes/game_object/exhumed_enemy/exhumed.png" id="1_ppjyu"]
+[ext_resource type="Script" path="res://resources/bestiary_entries/bestiary_entry.gd" id="2_ffiry"]
+
+[resource]
+script = ExtResource("2_ffiry")
+id = "exhumed"
+name = "Exhumed"
+image = ExtResource("1_ppjyu")
+description = "Citizen of the empire are told that the Exhumed are the shells of dead humans, resurrected by Imperial necromancers. This is, however, an outrageous lie force-fed to the ignorant masses.
+
+In reality, the Exhumed were never alive at all. They are manufactured life forms, sculpted out of flesh by necromancers, and that is where the death magicians' role in the story ends. From there, a secret cadre of profane sorcerers inject the flesh with artificial souls torn from the Boundary. These souls, forged from the very fabric of life itself, are then bound with forbidden sealing rituals to stopper their exodus from the body.
+
+Naturally, this results in a creature that is alive in only the most generous definition of the word. It will walk, thrash, and obey the most simply understood of orders, all the while its artificial soul grows more and more unstable. The fate of the Exhumed is inevitable: whether killed or simply allowed to fission for too long, the creature's soul will eventually escape in a highly volatile form."

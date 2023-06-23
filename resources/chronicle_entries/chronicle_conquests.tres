@@ -1,0 +1,13 @@
+[gd_resource type="Resource" script_class="ChronicleEntry" load_steps=2 format=3 uid="uid://b67e5u6cyn7h7"]
+
+[ext_resource type="Script" path="res://resources/chronicle_entries/chronicle_entry.gd" id="1_7ihtl"]
+
+[resource]
+script = ExtResource("1_7ihtl")
+id = "chronicle_2"
+name = "Years of Conquest"
+description = "Since his rise to power, the Dark Lord has committed great and horrible deeds, many of which did absolutely nothing to advance his own strategic or political position. He is a man who acts, first and foremost, to inspire horror in his enemies.
+
+From the complete annihilation of Nordal to the fall of Nacretia, our Dark Lord has made spectacles of his victories. Even now, whispers of his name spread fear through the Outer Nations, and it is said their populaces pray nightly that Gareth does not turn his gaze upon them.
+
+Among his most famous atrocities is the slaughter in Eshem, in which the region's children were gathered up and massacred. As if that were not grisly enough, each victim's name was recorded in a volume known as the Book of Epitaphs, which would serve as an eternal record of the event's bloodshed. This was enacted because a blind hag prophesied that a child born that year in Eshem was fated to take Lord Gareth's life. Within a decade, the region was barren, and the Dark Lord's rule unchallenged."

@@ -1,0 +1,14 @@
+[gd_resource type="Resource" script_class="MetaUpgrade" load_steps=3 format=3 uid="uid://dq50ykfcjbt6c"]
+
+[ext_resource type="Texture2D" uid="uid://c8jp4ad5hc1xh" path="res://assets/ui/health_vial.png" id="1_3t3vh"]
+[ext_resource type="Script" path="res://resources/meta_upgrades/meta_upgrade.gd" id="2_0x1om"]
+
+[resource]
+script = ExtResource("2_0x1om")
+id = "health_vials"
+max_quantity = 3
+xp_cost = 50
+cost_increase_per_level = 100
+title = "Health Vials"
+description = "Adds a 1% chance per level for enemies to drop health vials"
+icon = ExtResource("1_3t3vh")

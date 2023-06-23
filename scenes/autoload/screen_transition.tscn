@@ -1,0 +1,110 @@
+[gd_scene load_steps=9 format=3 uid="uid://ckwbqej484y72"]
+
+[ext_resource type="Script" path="res://scenes/autoload/screen_transition.gd" id="1_0ks2s"]
+[ext_resource type="Shader" path="res://scenes/autoload/screen_transition.gdshader" id="1_5palu"]
+[ext_resource type="Texture2D" uid="uid://ctrajwfkubaqp" path="res://assets/screen_transition.png" id="2_xk406"]
+
+[sub_resource type="Animation" id="Animation_tsa7k"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("ColorRect:material:shader_parameter/percent")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [0.0]
+}
+
+[sub_resource type="Animation" id="Animation_25ioa"]
+resource_name = "in"
+length = 0.5
+step = 0.01
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("ColorRect:material:shader_parameter/percent")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.4),
+"transitions": PackedFloat32Array(1.93187, 1),
+"update": 0,
+"values": [0.0, 1.0]
+}
+tracks/1/type = "method"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath(".")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0.4),
+"transitions": PackedFloat32Array(1),
+"values": [{
+"args": [],
+"method": &"emit_transition_halfway"
+}]
+}
+
+[sub_resource type="Animation" id="Animation_7ac4f"]
+resource_name = "out"
+length = 0.4
+step = 0.01
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("ColorRect:material:shader_parameter/percent")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.4),
+"transitions": PackedFloat32Array(1.93187, 1),
+"update": 0,
+"values": [1.0, 0.0]
+}
+tracks/1/type = "method"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath(".")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(),
+"transitions": PackedFloat32Array(),
+"values": []
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_8v342"]
+_data = {
+"RESET": SubResource("Animation_tsa7k"),
+"in": SubResource("Animation_25ioa"),
+"out": SubResource("Animation_7ac4f")
+}
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_sxh1h"]
+shader = ExtResource("1_5palu")
+shader_parameter/percent = 0.0
+shader_parameter/color = Color(0.247059, 0.14902, 0.192157, 1)
+shader_parameter/transition_texture = ExtResource("2_xk406")
+
+[node name="ScreenTransition" type="CanvasLayer"]
+process_mode = 3
+layer = 10
+script = ExtResource("1_0ks2s")
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+libraries = {
+"": SubResource("AnimationLibrary_8v342")
+}
+
+[node name="ColorRect" type="ColorRect" parent="."]
+material = SubResource("ShaderMaterial_sxh1h")
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2

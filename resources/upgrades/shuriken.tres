@@ -1,0 +1,14 @@
+[gd_resource type="Resource" script_class="Ability" load_steps=4 format=3 uid="uid://binlchus87jer"]
+
+[ext_resource type="PackedScene" uid="uid://dc4bd7usrsgqj" path="res://scenes/abilities/shuriken_ability_controller/shuriken_ability_controller.tscn" id="1_w4lrh"]
+[ext_resource type="Texture2D" uid="uid://caglf2fe343ko" path="res://scenes/abilities/shuriken_ability/shuriken.png" id="2_1fte4"]
+[ext_resource type="Script" path="res://resources/upgrades/ability.gd" id="3_ul6re"]
+
+[resource]
+script = ExtResource("3_ul6re")
+ability_controller_scene = ExtResource("1_w4lrh")
+id = "shuriken"
+max_quantity = 1
+name = "Shuriken"
+description = "A throwing weapon that bounces between enemies!"
+icon = ExtResource("2_1fte4")

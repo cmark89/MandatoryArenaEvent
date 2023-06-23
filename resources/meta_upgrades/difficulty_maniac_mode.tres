@@ -1,0 +1,14 @@
+[gd_resource type="Resource" script_class="MetaUpgrade" load_steps=3 format=3 uid="uid://bqn4od2tufdvm"]
+
+[ext_resource type="Texture2D" uid="uid://bo1uy128pgyha" path="res://assets/ui/maniacmode.png" id="1_4t0fb"]
+[ext_resource type="Script" path="res://resources/meta_upgrades/meta_upgrade.gd" id="2_326tw"]
+
+[resource]
+script = ExtResource("2_326tw")
+id = "maniac_mode"
+max_quantity = 1
+xp_cost = 500
+cost_increase_per_level = 10
+title = "Maniac Mode"
+description = "Unlocks Maniac mode. The battle has just begun...!"
+icon = ExtResource("1_4t0fb")

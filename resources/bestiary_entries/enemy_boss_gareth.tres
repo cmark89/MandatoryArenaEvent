@@ -1,0 +1,13 @@
+[gd_resource type="Resource" script_class="BestiaryEntry" load_steps=3 format=3 uid="uid://n88bsfkv4v3q"]
+
+[ext_resource type="Texture2D" uid="uid://d37ac2ip6pmp4" path="res://scenes/game_object/gareth_boss/boss_gareth.png" id="1_sjtcu"]
+[ext_resource type="Script" path="res://resources/bestiary_entries/bestiary_entry.gd" id="2_3exe8"]
+
+[resource]
+script = ExtResource("2_3exe8")
+id = "boss_gareth"
+name = "Dark Lord Gareth"
+image = ExtResource("1_sjtcu")
+description = "The supreme ruler of Dalos, shaper of futures and eraser of histories. Having defeated the blind hag's prophecy, he is self-assured of his own invulnerability. He will, on rare occasion, enter the arena to personally wring the life out of convicts who manage to impress him.
+
+His power is not of this world."

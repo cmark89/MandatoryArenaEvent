@@ -1,0 +1,13 @@
+[gd_resource type="Resource" script_class="BestiaryEntry" load_steps=3 format=3 uid="uid://bpnp45x8b7uml"]
+
+[ext_resource type="Texture2D" uid="uid://cjbv6sadxfgtu" path="res://scenes/game_object/gladiator_enemy/gladiator_enemy.png" id="1_tkcug"]
+[ext_resource type="Script" path="res://resources/bestiary_entries/bestiary_entry.gd" id="2_w0f5w"]
+
+[resource]
+script = ExtResource("2_w0f5w")
+id = "gladiator"
+name = "Gladiator"
+image = ExtResource("1_tkcug")
+description = "Due to the barbaric frequency of arena executions, the Empire's gladiators enjoy a lucrative and comfortable profession. Many members of the arena's stable of fighters are low-born, foreign, or otherwise from a class that many in society would deem beneath them. However, the raw spectacle of the arena's resurgence has brought honor upon all who would enter the arena to dispatch the convicts thrown into its teeth.
+
+In a typical execution, one or two gladiators are more than sufficient to end the flailing of the condemned. They are well trained, decently well equipped, and most important of all: hungry to keep themselves swaddled in the life of luxury they've clawed themselves into."

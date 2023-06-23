@@ -1,0 +1,14 @@
+[gd_resource type="Resource" script_class="Ability" load_steps=4 format=3 uid="uid://cpik4fbdwfwmw"]
+
+[ext_resource type="PackedScene" uid="uid://joyvmxiev16n" path="res://scenes/abilities/hourglass_ability_controller/hourglass_ability_controller.tscn" id="1_ctfmt"]
+[ext_resource type="Texture2D" uid="uid://dcggik8kjipdh" path="res://assets/ui/hourglass.png" id="2_mitqs"]
+[ext_resource type="Script" path="res://resources/upgrades/ability.gd" id="3_5tv60"]
+
+[resource]
+script = ExtResource("3_5tv60")
+ability_controller_scene = ExtResource("1_ctfmt")
+id = "hourglass"
+max_quantity = 1
+name = "Hadal Sand"
+description = "Damages nearby enemies with earthquakes!"
+icon = ExtResource("2_mitqs")

@@ -1,0 +1,48 @@
+[gd_scene load_steps=30 format=3 uid="uid://chy8gddo2r1rt"]
+
+[ext_resource type="Script" path="res://scenes/game_object/gareth_boss/final_boss_audio_player.gd" id="1_jjcsg"]
+[ext_resource type="Resource" uid="uid://d1prk2hyrvuwn" path="res://resources/final_boss_voice_lines/spawn1.tres" id="2_lsgva"]
+[ext_resource type="Resource" uid="uid://b8ndimifyb2ji" path="res://resources/final_boss_voice_lines/spawn2.tres" id="3_vnv64"]
+[ext_resource type="Resource" uid="uid://djr6e1wppje5n" path="res://resources/final_boss_voice_lines/spawn3.tres" id="4_k71eh"]
+[ext_resource type="Resource" uid="uid://c6uounq3rcdgo" path="res://resources/final_boss_voice_lines/bloodorb1.tres" id="5_07rrj"]
+[ext_resource type="Resource" uid="uid://b6hxv85ua6ss6" path="res://resources/final_boss_voice_lines/shoot1.tres" id="5_tg0c4"]
+[ext_resource type="Resource" uid="uid://b3jqpp337pidb" path="res://resources/final_boss_voice_lines/shoot2.tres" id="6_gygus"]
+[ext_resource type="Resource" uid="uid://cskwbisk566ki" path="res://resources/final_boss_voice_lines/bloodorb2.tres" id="6_km3b7"]
+[ext_resource type="Resource" uid="uid://b0g70cv50guxb" path="res://resources/final_boss_voice_lines/bloodorb3.tres" id="7_bbr0n"]
+[ext_resource type="Resource" uid="uid://cp7r6emk1phbp" path="res://resources/final_boss_voice_lines/shoot3.tres" id="7_r4loh"]
+[ext_resource type="Resource" uid="uid://c5rtb0fl5xtp6" path="res://resources/final_boss_voice_lines/shoot4.tres" id="8_afjc6"]
+[ext_resource type="Resource" uid="uid://dmluuc7wlcb56" path="res://resources/final_boss_voice_lines/shoot5.tres" id="9_2h8g3"]
+[ext_resource type="Resource" uid="uid://cykoxcercdwcy" path="res://resources/final_boss_voice_lines/laugh1.tres" id="10_hfmo1"]
+[ext_resource type="Resource" uid="uid://db6rd3gkeddr3" path="res://resources/final_boss_voice_lines/laugh2.tres" id="11_0ga1y"]
+[ext_resource type="Resource" uid="uid://bd51cyjfwvax" path="res://resources/final_boss_voice_lines/laugh3.tres" id="12_piw7h"]
+[ext_resource type="Resource" uid="uid://djjpvty87raf8" path="res://resources/final_boss_voice_lines/bubblestorm1.tres" id="13_ku4ve"]
+[ext_resource type="Resource" uid="uid://0dgkqg1nxf4o" path="res://resources/final_boss_voice_lines/bubblestorm2.tres" id="14_iucrp"]
+[ext_resource type="Resource" uid="uid://b78tpapigk16l" path="res://resources/final_boss_voice_lines/bubblestorm3.tres" id="15_lhahf"]
+[ext_resource type="Resource" uid="uid://cr6vmog2ikag" path="res://resources/final_boss_voice_lines/bubblestorm4.tres" id="16_dwkat"]
+[ext_resource type="Resource" uid="uid://dswpa7s33447a" path="res://resources/final_boss_voice_lines/createtrap1.tres" id="17_l3gs4"]
+[ext_resource type="Resource" uid="uid://dpryonovr3vav" path="res://resources/final_boss_voice_lines/createtrap2.tres" id="18_aof86"]
+[ext_resource type="Resource" uid="uid://82g4m58f66vc" path="res://resources/final_boss_voice_lines/createtrap3.tres" id="19_i7gdf"]
+[ext_resource type="Resource" uid="uid://de30dj204ymuh" path="res://resources/final_boss_voice_lines/createtrap4.tres" id="20_tul8c"]
+[ext_resource type="Resource" uid="uid://b4xmoedogts16" path="res://resources/final_boss_voice_lines/createtrap5.tres" id="21_4m03m"]
+[ext_resource type="Resource" uid="uid://shj8287eh6k" path="res://resources/final_boss_voice_lines/lowhealth.tres" id="22_ep631"]
+[ext_resource type="Resource" uid="uid://bxxiupxv3602g" path="res://resources/final_boss_voice_lines/death.tres" id="23_xnvf8"]
+[ext_resource type="Resource" uid="uid://dq4ri12v8txav" path="res://resources/final_boss_voice_lines/springtrap1.tres" id="25_n6uf0"]
+[ext_resource type="Resource" uid="uid://dpjseeg0b1ged" path="res://resources/final_boss_voice_lines/springtrap2.tres" id="26_bfh3y"]
+[ext_resource type="Resource" uid="uid://5f6yhw5c8dxm" path="res://resources/final_boss_voice_lines/springtrap3.tres" id="27_gnxrg"]
+
+[node name="FinalBossAudioPlayer" type="Node"]
+script = ExtResource("1_jjcsg")
+spawn_clips = Array[Resource("res://scenes/game_object/gareth_boss/final_boss_voice_line.gd")]([ExtResource("2_lsgva"), ExtResource("3_vnv64"), ExtResource("4_k71eh")])
+blood_orb_clips = Array[Resource("res://scenes/game_object/gareth_boss/final_boss_voice_line.gd")]([ExtResource("5_07rrj"), ExtResource("6_km3b7"), ExtResource("7_bbr0n")])
+shooting_clips = Array[Resource("res://scenes/game_object/gareth_boss/final_boss_voice_line.gd")]([ExtResource("5_tg0c4"), ExtResource("6_gygus"), ExtResource("7_r4loh"), ExtResource("8_afjc6"), ExtResource("9_2h8g3")])
+laughing_clips = Array[Resource("res://scenes/game_object/gareth_boss/final_boss_voice_line.gd")]([ExtResource("10_hfmo1"), ExtResource("11_0ga1y"), ExtResource("12_piw7h")])
+bubble_storm_clips = Array[Resource("res://scenes/game_object/gareth_boss/final_boss_voice_line.gd")]([ExtResource("13_ku4ve"), ExtResource("14_iucrp"), ExtResource("15_lhahf"), ExtResource("16_dwkat")])
+trap_create_clips = Array[Resource("res://scenes/game_object/gareth_boss/final_boss_voice_line.gd")]([ExtResource("17_l3gs4"), ExtResource("18_aof86"), ExtResource("19_i7gdf"), ExtResource("20_tul8c"), ExtResource("21_4m03m")])
+trap_spring_clips = Array[Resource("res://scenes/game_object/gareth_boss/final_boss_voice_line.gd")]([ExtResource("25_n6uf0"), ExtResource("26_bfh3y"), ExtResource("27_gnxrg")])
+low_health_clip = ExtResource("22_ep631")
+death_clip = ExtResource("23_xnvf8")
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
+process_mode = 3
+volume_db = -5.0
+bus = &"SFX"

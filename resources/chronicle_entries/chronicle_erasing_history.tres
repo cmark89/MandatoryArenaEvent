@@ -1,0 +1,13 @@
+[gd_resource type="Resource" script_class="ChronicleEntry" load_steps=2 format=3 uid="uid://chg4ejkm8bvvo"]
+
+[ext_resource type="Script" path="res://resources/chronicle_entries/chronicle_entry.gd" id="1_68f6t"]
+
+[resource]
+script = ExtResource("1_68f6t")
+id = "chronicle_3"
+name = "Eraser of History"
+description = "One of the Dark Lord's favorite pastimes is destroying artifacts and ruins of historical value. One could make a strong case that Gareth, in cementing his rise to power on Dalos, wishes to purge all evidence that the land ever existed without him. Yet, this destruction doesn't seem motivated by censorship or esteem. Rather, this erasure seems more targeted.
+
+Take, for instance, the legendary sword Kingsbane, recovered from the deepest tombs beneath Nordal. Amid the destruction of relics and treasures which, by all accounts, were far more valuable both monetarily and historically, Lord Gareth chose this artifact alone to preserve from the pillaging.
+
+If the Dark Lord sought the absolute erasure of history, then why allow this artifact, a symbol of revolution, to survive?"

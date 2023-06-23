@@ -1,0 +1,9 @@
+[gd_resource type="Resource" script_class="FinalBossVoiceLine" load_steps=3 format=3 uid="uid://cr6vmog2ikag"]
+
+[ext_resource type="AudioStream" uid="uid://b2tupwln4kb7y" path="res://resources/final_boss_voice_lines/audio/bubblestream4.wav" id="1_dvfeg"]
+[ext_resource type="Script" path="res://scenes/game_object/gareth_boss/final_boss_voice_line.gd" id="2_tbc6b"]
+
+[resource]
+script = ExtResource("2_tbc6b")
+file = ExtResource("1_dvfeg")
+text = "This is the end."

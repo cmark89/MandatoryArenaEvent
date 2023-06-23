@@ -1,0 +1,24 @@
+[gd_resource type="Resource" script_class="ChronicleEntry" load_steps=2 format=3 uid="uid://dcls27m4mfhjw"]
+
+[ext_resource type="Script" path="res://resources/chronicle_entries/chronicle_entry.gd" id="1_8l7al"]
+
+[resource]
+script = ExtResource("1_8l7al")
+id = "chronicle_7"
+name = "Ode to the Dark Lord"
+description = "Yea, we have never been more free
+Than in this city built with bone and gold
+We are grateful, O Lord
+We are grateful
+
+Lift me up on ivory wings
+So I may see all the lands you rule
+And the ruins of those who refused
+Your mercy, O Lord
+Your mercy
+
+We give thanks that you raise the sun
+We give thanks that you wove the stars
+We drink your gift and plenty every day
+We live for you, O Lord
+We live for you"

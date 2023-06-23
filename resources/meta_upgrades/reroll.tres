@@ -1,0 +1,14 @@
+[gd_resource type="Resource" script_class="MetaUpgrade" load_steps=3 format=3 uid="uid://dj81r7by4eh6h"]
+
+[ext_resource type="Texture2D" uid="uid://b58p1qcnv6gi2" path="res://assets/ui/chest.png" id="1_heg28"]
+[ext_resource type="Script" path="res://resources/meta_upgrades/meta_upgrade.gd" id="2_5eg7s"]
+
+[resource]
+script = ExtResource("2_5eg7s")
+id = "reroll"
+max_quantity = 3
+xp_cost = 100
+cost_increase_per_level = 200
+title = "Reroll"
+description = "Once per level, you may choose to reroll upgrade choices!"
+icon = ExtResource("1_heg28")

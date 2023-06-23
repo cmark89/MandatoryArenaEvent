@@ -1,0 +1,19 @@
+[gd_resource type="Resource" script_class="ChronicleEntry" load_steps=2 format=3 uid="uid://cey15b1ffmlrf"]
+
+[ext_resource type="Script" path="res://resources/chronicle_entries/chronicle_entry.gd" id="1_lbvhk"]
+
+[resource]
+script = ExtResource("1_lbvhk")
+id = "chronicle_4"
+name = "On Kingsbane"
+description = "There is, in fact, a very good reason the Dark Lord would preserve Kingsbane, the sword that for 1200 years determined the rise and fall of the Nordal philosopher kings. 
+
+When the blind hag appeared before Gareth, speaking of the birth of the Eshem child fated to slay him, an oft-overlooked detail is that the revolutionary would use the king-slaying sword to accomplish the task.
+
+What is notable about this is the timeline. The blind hag's appearance predates the Imperial annexation of Nordal by several months. From this, we can conclude that Gareth's decision to preserve the blade was as a final mockery of the failed prophecy.
+
+Even now, the blade sits in the Imperial palace, proudly on display. When in company, Lord Gareth speaks often about his fondness for the weapon, of its unparalleled artistry and craftsmanship, while somewhat wistfully expressing regret that the techniques for such fine bladesmithing were lost in the fall of the Hanzarians.
+
+However, this opinion is not universal. Tethinis Gaul, a master smith at the Silver Forge, opined that with Lixxi forging techniques, a sufficiently skilled smith could create a blade precisely as artful and fine as Kingsbane, to the point that an expert could never tell the forgery from the original.
+
+For his dissent, Gaul was promptly hanged."

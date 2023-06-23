@@ -1,0 +1,14 @@
+[gd_resource type="Resource" script_class="Ability" load_steps=4 format=3 uid="uid://bhdrq7wd41r0e"]
+
+[ext_resource type="PackedScene" uid="uid://cwtariuk7vbkq" path="res://scenes/abilities/axe_ability_controller/axe_ability_controller.tscn" id="1_xsxps"]
+[ext_resource type="Texture2D" uid="uid://d0ys32y4dw32p" path="res://scenes/abilities/axe_ability/axe.png" id="2_rnkqy"]
+[ext_resource type="Script" path="res://resources/upgrades/ability.gd" id="2_sgnqh"]
+
+[resource]
+script = ExtResource("2_sgnqh")
+ability_controller_scene = ExtResource("1_xsxps")
+id = "axe"
+max_quantity = 1
+name = "Axe"
+description = "An axe that spirals out and cleaves foes!"
+icon = ExtResource("2_rnkqy")

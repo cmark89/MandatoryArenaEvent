@@ -1,0 +1,13 @@
+[gd_resource type="Resource" script_class="BestiaryEntry" load_steps=3 format=3 uid="uid://cxi2fom0mefbf"]
+
+[ext_resource type="Texture2D" uid="uid://por3or61dl0v" path="res://scenes/game_object/executioner_boss/boss_executioner.png" id="1_ln4uu"]
+[ext_resource type="Script" path="res://resources/bestiary_entries/bestiary_entry.gd" id="2_0lwlo"]
+
+[resource]
+script = ExtResource("2_0lwlo")
+id = "boss_executioner"
+name = "Grand Executioner"
+image = ExtResource("1_ln4uu")
+description = "It is said that one of the Empire's most bloodthirsty citizens was a butcher from lower Bodnath. Born with a disease that compelled him to kill, he spent years secretly murdering and butchering people, hiding the evidence by passing off scraps of their flesh among his cuttings at the shop.
+
+When he was caught, he faced trial at the Empire's highest court. But Dark Lord Gareth intervened in his sentencing. Despite hundreds of counts of murder, desecration, and cannibalism, Gareth was amused by this man's peculiar lust for carnage. And thus the Dark Lord stayed his execution, and handed him the axe."

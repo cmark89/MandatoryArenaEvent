@@ -1,0 +1,12 @@
+[gd_scene load_steps=3 format=3 uid="uid://joyvmxiev16n"]
+
+[ext_resource type="Script" path="res://scenes/abilities/hourglass_ability_controller/hourglass_ability_controller.gd" id="1_xqisu"]
+[ext_resource type="PackedScene" uid="uid://c884y6stpco28" path="res://scenes/abilities/hourglass_ability/hourglass_ability.tscn" id="2_lo1u2"]
+
+[node name="HourglassAbilityController" type="Node"]
+script = ExtResource("1_xqisu")
+hourglass_ability_scene = ExtResource("2_lo1u2")
+
+[node name="Timer" type="Timer" parent="."]
+wait_time = 2.0
+autostart = true

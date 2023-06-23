@@ -1,0 +1,136 @@
+[gd_scene load_steps=21 format=3 uid="uid://dtvi0pfhctdbs"]
+
+[ext_resource type="Texture2D" uid="uid://d04tk425inx07" path="res://scenes/game_object/basic_enemy/basic_enemy.png" id="1_pxa6x"]
+[ext_resource type="Script" path="res://scenes/main/bestiary.gd" id="1_ra74l"]
+[ext_resource type="Resource" uid="uid://rqysjd6oilvv" path="res://resources/bestiary_entries/enemy_vermin.tres" id="2_58t5y"]
+[ext_resource type="PackedScene" uid="uid://cf1dxk0u24mtl" path="res://scenes/ui/sound_button.tscn" id="2_lcvha"]
+[ext_resource type="Resource" uid="uid://b3nd6py5tp40n" path="res://resources/bestiary_entries/enemy_failed_wizard.tres" id="3_8fm05"]
+[ext_resource type="Resource" uid="uid://dll25i4ffxfn3" path="res://resources/bestiary_entries/enemy_shadow_bat.tres" id="3_xky1k"]
+[ext_resource type="PackedScene" uid="uid://r5coytulttbm" path="res://scenes/ui/sound_texture_button.tscn" id="5_a1fvq"]
+[ext_resource type="Resource" uid="uid://bseycrj2f3e38" path="res://resources/bestiary_entries/enemy_ratfink.tres" id="5_nwkj3"]
+[ext_resource type="Resource" uid="uid://bpnp45x8b7uml" path="res://resources/bestiary_entries/enemy_gladiator.tres" id="6_gw1yc"]
+[ext_resource type="Resource" uid="uid://dfiwnfqlkv3x4" path="res://resources/bestiary_entries/enemy_apprentice.tres" id="7_n8b14"]
+[ext_resource type="Resource" uid="uid://q1aef1g6i3ah" path="res://resources/bestiary_entries/enemy_lesser_chad.tres" id="8_ehdlx"]
+[ext_resource type="Resource" uid="uid://6r5vs364rkbf" path="res://resources/bestiary_entries/enemy_exhumed.tres" id="9_bfjgm"]
+[ext_resource type="Resource" uid="uid://d23wkomitem56" path="res://resources/bestiary_entries/enemy_spider.tres" id="10_4t4jb"]
+[ext_resource type="Resource" uid="uid://k73qwj1sksiq" path="res://resources/bestiary_entries/enemy_giant.tres" id="11_knn20"]
+[ext_resource type="Resource" uid="uid://bbt0mkdoswex0" path="res://resources/bestiary_entries/enemy_boss_crab.tres" id="12_0gyvv"]
+[ext_resource type="Resource" uid="uid://dpld6u6qxdfo6" path="res://resources/bestiary_entries/enemy_executed.tres" id="12_xtbcd"]
+[ext_resource type="Resource" uid="uid://c3rmhh3h5rh4g" path="res://resources/bestiary_entries/enemy_boss_chad.tres" id="13_0ndol"]
+[ext_resource type="Resource" uid="uid://y72ingmgpnsb" path="res://resources/bestiary_entries/enemy_ghost.tres" id="13_8ss5j"]
+[ext_resource type="Resource" uid="uid://cxi2fom0mefbf" path="res://resources/bestiary_entries/enemy_boss_executioner.tres" id="15_seru0"]
+[ext_resource type="Resource" uid="uid://n88bsfkv4v3q" path="res://resources/bestiary_entries/enemy_boss_gareth.tres" id="16_cpysf"]
+
+[node name="Bestiary" type="CanvasLayer"]
+layer = 2
+script = ExtResource("1_ra74l")
+entries = Array[Resource("res://resources/bestiary_entries/bestiary_entry.gd")]([ExtResource("2_58t5y"), ExtResource("3_8fm05"), ExtResource("3_xky1k"), ExtResource("5_nwkj3"), ExtResource("6_gw1yc"), ExtResource("7_n8b14"), ExtResource("8_ehdlx"), ExtResource("9_bfjgm"), ExtResource("10_4t4jb"), ExtResource("11_knn20"), ExtResource("12_xtbcd"), ExtResource("13_8ss5j"), ExtResource("12_0gyvv"), ExtResource("13_0ndol"), ExtResource("15_seru0"), ExtResource("16_cpysf")])
+
+[node name="MarginContainer" type="MarginContainer" parent="."]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="HBoxContainer" type="HBoxContainer" parent="MarginContainer"]
+layout_mode = 2
+theme_override_constants/separation = -46
+
+[node name="PreviousEntryButton" parent="MarginContainer/HBoxContainer" instance=ExtResource("5_a1fvq")]
+layout_mode = 2
+size_flags_horizontal = 6
+size_flags_vertical = 4
+
+[node name="VBoxContainer" type="VBoxContainer" parent="MarginContainer/HBoxContainer"]
+layout_mode = 2
+size_flags_vertical = 4
+
+[node name="PanelContainer" type="PanelContainer" parent="MarginContainer/HBoxContainer/VBoxContainer"]
+custom_minimum_size = Vector2(450, 0)
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+theme_type_variation = &"BestiaryPanel"
+
+[node name="VBoxContainer" type="VBoxContainer" parent="MarginContainer/HBoxContainer/VBoxContainer/PanelContainer"]
+layout_mode = 2
+theme_override_constants/separation = 16
+
+[node name="name" type="Label" parent="MarginContainer/HBoxContainer/VBoxContainer/PanelContainer/VBoxContainer"]
+layout_mode = 2
+theme_override_colors/font_shadow_color = Color(0.247059, 0.14902, 0.192157, 1)
+theme_override_colors/font_outline_color = Color(0.247059, 0.14902, 0.192157, 1)
+theme_override_constants/shadow_offset_x = 0
+theme_override_constants/shadow_offset_y = 0
+theme_override_constants/outline_size = 8
+theme_override_font_sizes/font_size = 32
+text = "Ratfink"
+horizontal_alignment = 1
+vertical_alignment = 2
+
+[node name="HBoxContainer" type="HBoxContainer" parent="MarginContainer/HBoxContainer/VBoxContainer/PanelContainer/VBoxContainer"]
+custom_minimum_size = Vector2(400, 0)
+layout_mode = 2
+
+[node name="MarginContainer" type="MarginContainer" parent="MarginContainer/HBoxContainer/VBoxContainer/PanelContainer/VBoxContainer/HBoxContainer"]
+layout_mode = 2
+theme_override_constants/margin_left = 24
+theme_override_constants/margin_right = 24
+
+[node name="Control" type="Control" parent="MarginContainer/HBoxContainer/VBoxContainer/PanelContainer/VBoxContainer/HBoxContainer/MarginContainer"]
+custom_minimum_size = Vector2(64, 64)
+layout_mode = 2
+size_flags_horizontal = 0
+size_flags_vertical = 0
+
+[node name="Image" type="TextureRect" parent="MarginContainer/HBoxContainer/VBoxContainer/PanelContainer/VBoxContainer/HBoxContainer/MarginContainer/Control"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("1_pxa6x")
+flip_h = true
+
+[node name="MarginContainer2" type="MarginContainer" parent="MarginContainer/HBoxContainer/VBoxContainer/PanelContainer/VBoxContainer/HBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_constants/margin_right = 12
+
+[node name="ScrollContainer" type="ScrollContainer" parent="MarginContainer/HBoxContainer/VBoxContainer/PanelContainer/VBoxContainer/HBoxContainer/MarginContainer2"]
+custom_minimum_size = Vector2(0, 240)
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="Description" type="Label" parent="MarginContainer/HBoxContainer/VBoxContainer/PanelContainer/VBoxContainer/HBoxContainer/MarginContainer2/ScrollContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 1
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
+text = "By way of incompetent zoning and city planning, the battle arena Lord Gareth uses for executions happens to sit directly atop a network of old sewer lines. In addition to giving the convicted's final moments the distinct background aroma of raw, feculent sewage, this has a darker, more horrible effect. 
+
+As the rats swarm in a tide of living fur and fangs, drawn by the trumpets of battle and smell of fresh meat, the convicted invariably feels a rush of hope as the vermin fall by the dozen. Once the real battle begins, that hope slips deliciously away."
+vertical_alignment = 1
+autowrap_mode = 2
+
+[node name="NextEntryButton" parent="MarginContainer/HBoxContainer" instance=ExtResource("5_a1fvq")]
+layout_mode = 2
+size_flags_horizontal = 6
+size_flags_vertical = 4
+flip_h = true
+
+[node name="MarginContainer3" type="MarginContainer" parent="MarginContainer"]
+layout_mode = 2
+size_flags_horizontal = 0
+size_flags_vertical = 8
+theme_override_constants/margin_left = 4
+theme_override_constants/margin_bottom = 4
+
+[node name="BackButton" parent="MarginContainer/MarginContainer3" instance=ExtResource("2_lcvha")]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(50, 0)
+layout_mode = 2
+size_flags_horizontal = 0
+text = "Back"

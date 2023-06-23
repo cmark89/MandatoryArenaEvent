@@ -1,0 +1,14 @@
+[gd_resource type="Resource" script_class="MetaUpgrade" load_steps=3 format=3 uid="uid://c377icybc4us3"]
+
+[ext_resource type="Texture2D" uid="uid://c4d8m4nhlcer4" path="res://assets/ui/nightmaremode.png" id="1_lrhj3"]
+[ext_resource type="Script" path="res://resources/meta_upgrades/meta_upgrade.gd" id="2_gn7r6"]
+
+[resource]
+script = ExtResource("2_gn7r6")
+id = "nightmare_mode"
+max_quantity = 1
+xp_cost = 1500
+cost_increase_per_level = 10
+title = "Nightmare Mode"
+description = "Unlocks Nightmare mode. There is no awaking...!"
+icon = ExtResource("1_lrhj3")

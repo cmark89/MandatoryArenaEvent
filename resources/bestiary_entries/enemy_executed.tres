@@ -1,0 +1,11 @@
+[gd_resource type="Resource" script_class="BestiaryEntry" load_steps=3 format=3 uid="uid://dpld6u6qxdfo6"]
+
+[ext_resource type="Script" path="res://resources/bestiary_entries/bestiary_entry.gd" id="1_2thgo"]
+[ext_resource type="Texture2D" uid="uid://d0f4frvvfsaej" path="res://scenes/game_object/executed_enemy/executed.png" id="1_36bb8"]
+
+[resource]
+script = ExtResource("1_2thgo")
+id = "executed"
+name = "Executed Hero"
+image = ExtResource("1_36bb8")
+description = "Over the decades of the Empire's reign, countless would-be heroes have risen to challenge the Dark Lord Gareth. Every one of them met the same fate: stuffed so full of blades that one struggles to find a trace of what their torturers even executed in the first place."

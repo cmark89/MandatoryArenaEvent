@@ -1,0 +1,92 @@
+[gd_scene load_steps=3 format=3 uid="uid://dpd4rbaacfrmx"]
+
+[ext_resource type="PackedScene" uid="uid://cw8ueeb8wapme" path="res://scenes/abilities/sword_ability/sword_ability.tscn" id="2_i0om3"]
+
+[sub_resource type="GDScript" id="GDScript_jgepo"]
+script/source = "extends Node
+
+@export var sword_ability: PackedScene
+
+var base_damage = 5
+var bonus_damage = 0
+var base_rate
+
+var damage_sound = preload(\"res://assets/audio/hit_sword.wav\")
+var kingsbane_texture = preload(\"res://scenes/abilities/sword_ability/kingsbane.png\")
+
+const MAX_RANGE = 150
+
+var kingsbane = false
+var upgrade_damage_scalar = 1
+
+func _ready():
+	base_rate = $Timer.wait_time
+	GameEvents.ability_upgrade_added.connect(on_ability_upgrade_added)
+	$Timer.timeout.connect(on_timer_timeout)
+	
+
+
+func on_timer_timeout():
+	var player = get_tree().get_first_node_in_group(\"player\") as Node2D
+	if (player == null):
+		return
+	
+	var enemies = get_tree().get_nodes_in_group(\"enemy\")
+	enemies = enemies.filter(func(enemy:Node2D):
+		# Use squared distance because it's faster than using a square root function
+		return enemy.global_position.distance_squared_to(player.global_position) <= pow(MAX_RANGE, 2)
+	)
+			
+	if (enemies.size() == 0):
+		return
+	
+	enemies.sort_custom(func (a: Node2D, b: Node2D):
+		# Return true if a is closer than b
+		var a_distance = a.global_position.distance_squared_to(player.global_position)
+		var b_distance = b.global_position.distance_squared_to(player.global_position)
+		return a_distance < b_distance
+	)
+	var target = enemies[0]
+	
+	var sword_instance = sword_ability.instantiate() as SwordAbility
+
+	get_tree().get_first_node_in_group(\"foreground_layer\").add_child(sword_instance)
+	sword_instance.hitbox_component.damage = (base_damage + bonus_damage)  * upgrade_damage_scalar
+	sword_instance.hitbox_component.damage_sound = damage_sound
+	if kingsbane:
+		sword_instance.hitbox_component.damage_source = DamageSource.new(\"kingsbane\")
+		sword_instance.hitbox_component.crit_chance = 0.2
+		sword_instance.hitbox_component.crit_damage_multiplier = 2
+		sword_instance.set_texture(kingsbane_texture)
+	else:
+		sword_instance.hitbox_component.damage_source = DamageSource.new(\"sword\")
+
+	var spawn_position = target.global_position + Vector2.RIGHT.rotated(randf_range(0, TAU)) * 4
+	sword_instance.global_position = spawn_position
+	
+	var enemy_direction = target.global_position - sword_instance.global_position
+	sword_instance.rotation = enemy_direction.angle()	# both in radians
+
+
+func on_ability_upgrade_added(upgrade: AbilityUpgrade, current_upgrades: Dictionary):
+	if upgrade.id == \"sword_rate\":
+		var percent_reduction = current_upgrades[\"sword_rate\"].quantity * 0.10
+		$Timer.wait_time = base_rate * (1 - percent_reduction)
+		$Timer.start()
+	elif upgrade.id == \"sword_damage\":
+		bonus_damage += 2
+	elif upgrade.id == \"sword_kingsbane\":
+		bonus_damage *= 2
+		base_damage *= 2
+		kingsbane = true
+	elif upgrade.id == \"valor\":
+		upgrade_damage_scalar += 0.10
+"
+
+[node name="SwordAbilityController" type="Node"]
+script = SubResource("GDScript_jgepo")
+sword_ability = ExtResource("2_i0om3")
+
+[node name="Timer" type="Timer" parent="."]
+wait_time = 1.5
+autostart = true

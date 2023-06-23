@@ -1,0 +1,15 @@
+[gd_resource type="Resource" script_class="MetaUpgrade" load_steps=3 format=3 uid="uid://vxn3br45xuv4"]
+
+[ext_resource type="Texture2D" uid="uid://blyo41nhjtwjk" path="res://assets/ui/bookofepitaphs.png" id="1_6lk3f"]
+[ext_resource type="Script" path="res://resources/meta_upgrades/meta_upgrade.gd" id="2_647vl"]
+
+[resource]
+script = ExtResource("2_647vl")
+id = "book_epitaphs"
+max_quantity = 1
+xp_cost = 9999
+cost_increase_per_level = 10
+title = "Book of Epitaphs"
+description = "?????
+"
+icon = ExtResource("1_6lk3f")

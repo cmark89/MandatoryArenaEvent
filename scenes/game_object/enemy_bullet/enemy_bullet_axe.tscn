@@ -1,0 +1,80 @@
+[gd_scene load_steps=8 format=3 uid="uid://dudbp5y2gj73a"]
+
+[ext_resource type="Script" path="res://scenes/game_object/enemy_bullet/enemy_bullet.gd" id="1_42slq"]
+[ext_resource type="Texture2D" uid="uid://d0ys32y4dw32p" path="res://scenes/abilities/axe_ability/axe.png" id="2_562qr"]
+[ext_resource type="Texture2D" uid="uid://doesse6fung8e" path="res://assets/particles/circle_05.png" id="3_4y610"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_utv4i"]
+radius = 6.0
+
+[sub_resource type="Animation" id="Animation_oi2am"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Projectile:rotation")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [0.0]
+}
+
+[sub_resource type="Animation" id="Animation_2uqgc"]
+resource_name = "default"
+length = 0.4
+loop_mode = 1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Projectile:rotation")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.4),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [0.0, 6.28319]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_kyfuh"]
+_data = {
+"RESET": SubResource("Animation_oi2am"),
+"default": SubResource("Animation_2uqgc")
+}
+
+[node name="EnemyBullet" type="Node2D"]
+script = ExtResource("1_42slq")
+
+[node name="Timer" type="Timer" parent="."]
+wait_time = 10.0
+one_shot = true
+autostart = true
+
+[node name="Area2D" type="Area2D" parent="."]
+position = Vector2(0, -0.5)
+collision_layer = 0
+collision_mask = 2
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+scale = Vector2(0.5, 0.5)
+shape = SubResource("CircleShape2D_utv4i")
+
+[node name="Projectile" type="Sprite2D" parent="."]
+scale = Vector2(0.5, 0.5)
+texture = ExtResource("2_562qr")
+
+[node name="PointLight2D" type="PointLight2D" parent="Projectile"]
+y_sort_enabled = true
+scale = Vector2(0.2, 0.2)
+color = Color(0.913725, 0, 0.380392, 1)
+energy = 0.7
+texture = ExtResource("3_4y610")
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+autoplay = "default"
+libraries = {
+"": SubResource("AnimationLibrary_kyfuh")
+}

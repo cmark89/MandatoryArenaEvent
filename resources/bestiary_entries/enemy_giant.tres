@@ -1,0 +1,15 @@
+[gd_resource type="Resource" script_class="BestiaryEntry" load_steps=3 format=3 uid="uid://k73qwj1sksiq"]
+
+[ext_resource type="Texture2D" uid="uid://dj6dtik5fqp8c" path="res://scenes/game_object/giant_enemy/giant_enemy.png" id="1_rkhsu"]
+[ext_resource type="Script" path="res://resources/bestiary_entries/bestiary_entry.gd" id="2_2tiv3"]
+
+[resource]
+script = ExtResource("2_2tiv3")
+id = "giant"
+name = "Slave Giant"
+image = ExtResource("1_rkhsu")
+description = "The slave giants of Sisith are rarely seen in the arena. It is more common to see them assisting with megalithic construction, of which Dark Lord Gareth is famously fond.
+
+Despite the indignities visited upon them since their delivery into bondage by Chadicus the Valiant, this race of preternaturally tall humanoids is generally quiet and well mannered.  They are paid well in ale and meat, and nine out of ten of them are perfectly content with the arrangement.
+
+But, sometimes, a particularly violent giant emerges. When this occurs, great pains are taken to separate them from the rest of the group. Buying off their dissatisfaction with coin, drink, or whatever other vice tickles them, they are spirited away into the arms of the arena, where their socially dangerous ideas can be contained, and their violent tendencies can be put to good use."

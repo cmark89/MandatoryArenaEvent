@@ -1,0 +1,12 @@
+[gd_scene load_steps=3 format=3 uid="uid://c72erv28a701q"]
+
+[ext_resource type="Script" path="res://scenes/abilities/ghostpepper_ability_controller/ghostpepper_ability_controller.gd" id="1_jxhgo"]
+[ext_resource type="PackedScene" uid="uid://dh81gkgw2o6jt" path="res://scenes/abilities/ghostpepper_ability/ghostpepper_ability.tscn" id="2_odooh"]
+
+[node name="GhostpepperAbilityController" type="Node"]
+script = ExtResource("1_jxhgo")
+ghostpepper_ability = ExtResource("2_odooh")
+
+[node name="Timer" type="Timer" parent="."]
+wait_time = 3.5
+autostart = true

@@ -1,0 +1,24 @@
+[gd_scene load_steps=3 format=3 uid="uid://ce0igqjqt8qm1"]
+
+[ext_resource type="Script" path="res://scenes/ui/chosen_weapon_ui.gd" id="1_tumc5"]
+[ext_resource type="PackedScene" uid="uid://cjo4ixi2mchkc" path="res://scenes/ui/chosen_weapon.tscn" id="1_yqi85"]
+
+[node name="ChosenWeaponUI" type="CanvasLayer"]
+script = ExtResource("1_tumc5")
+chosen_weapon_scene = ExtResource("1_yqi85")
+
+[node name="MarginContainer" type="MarginContainer" parent="."]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_horizontal = 0
+size_flags_vertical = 8
+mouse_filter = 2
+
+[node name="HBoxContainer" type="HBoxContainer" parent="MarginContainer"]
+layout_mode = 2
+size_flags_horizontal = 0
+size_flags_vertical = 8
+mouse_filter = 2

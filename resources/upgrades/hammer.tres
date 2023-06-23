@@ -1,0 +1,14 @@
+[gd_resource type="Resource" script_class="Ability" load_steps=4 format=3 uid="uid://b5mv6uof3vjnv"]
+
+[ext_resource type="PackedScene" uid="uid://2ubpeymd7oli" path="res://scenes/abilities/hammer_ability_controller/hammer_ability_controller.tscn" id="1_f7q63"]
+[ext_resource type="Texture2D" uid="uid://cnw4fnsvptw3b" path="res://scenes/abilities/hammer_ability/hammer.png" id="2_3civn"]
+[ext_resource type="Script" path="res://resources/upgrades/ability.gd" id="3_mpllr"]
+
+[resource]
+script = ExtResource("3_mpllr")
+ability_controller_scene = ExtResource("1_f7q63")
+id = "hammer"
+max_quantity = 1
+name = "Gravity Hammer"
+description = "A hammer from Heaven to concuss your enemies!"
+icon = ExtResource("2_3civn")

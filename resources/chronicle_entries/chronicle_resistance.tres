@@ -1,0 +1,17 @@
+[gd_resource type="Resource" script_class="ChronicleEntry" load_steps=2 format=3 uid="uid://bd1pa3qn6syua"]
+
+[ext_resource type="Script" path="res://resources/chronicle_entries/chronicle_entry.gd" id="1_fbw58"]
+
+[resource]
+script = ExtResource("1_fbw58")
+id = "chronicle_5"
+name = "Those Who Resist"
+description = "Despite the overwhelming common good that Lord Gareth's brutal, iron fist has brought the continent of Dalos, there remain misguided cells of nationalists, anarchists, and scoundrels who bend effort toward dethroning the Dark Lord.
+
+Every day, well-trained ratfinks scout the sewers beneath the Empire's cities, uncovering whispers of dissent and political activism. To date, well over a hundred revolutionary groups have been crushed, and peace throughout the Empire has been maintained.
+
+A particularly gainsome victory was won recently. It was discovered by Imperial agents that the butterfly raisers of Y'nita were engaged in covert operations. Using specially trained azure morpho butterflies, they were delivering messages to deep-rooted cells and groups throughout the Imperial territories. When Lord Gareth found out, he had all of Y'nita's forests razed. This has resulted in the collapse of the butterfly spy network, and the near extinction of the azure morpho.
+
+Of course, these ill-fated resistance movements are not entirely without merit. Thanks to the development of the arena industrial complex, captive revolutionaries and convicts provide exhilarating entertainment to the Empire's citizens as they fight and die, the promise of freedom hanging unattainable over their heads.
+
+Despite this, it would be far better for all citizens if these revolutionaries would simply cease their impotent thrashing and yield to the glorious yoke of Lord Gareth's kindness and mercy. "

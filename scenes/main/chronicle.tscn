@@ -1,0 +1,105 @@
+[gd_scene load_steps=11 format=3 uid="uid://dx5tx78wcdrpn"]
+
+[ext_resource type="Script" path="res://scenes/main/chronicle.gd" id="1_hnn2e"]
+[ext_resource type="Resource" uid="uid://dthajgi38amym" path="res://resources/chronicle_entries/chronicle_origins.tres" id="2_col6x"]
+[ext_resource type="Resource" uid="uid://b67e5u6cyn7h7" path="res://resources/chronicle_entries/chronicle_conquests.tres" id="3_alini"]
+[ext_resource type="Resource" uid="uid://chg4ejkm8bvvo" path="res://resources/chronicle_entries/chronicle_erasing_history.tres" id="4_4r472"]
+[ext_resource type="Resource" uid="uid://cey15b1ffmlrf" path="res://resources/chronicle_entries/chronicle_kingsbane.tres" id="5_rl2si"]
+[ext_resource type="Resource" uid="uid://bd1pa3qn6syua" path="res://resources/chronicle_entries/chronicle_resistance.tres" id="6_5ilmr"]
+[ext_resource type="Resource" uid="uid://bnh636l2tg83u" path="res://resources/chronicle_entries/chronicle_kindness.tres" id="7_stree"]
+[ext_resource type="Resource" uid="uid://dcls27m4mfhjw" path="res://resources/chronicle_entries/chronicle_ode.tres" id="8_a36xu"]
+[ext_resource type="PackedScene" uid="uid://r5coytulttbm" path="res://scenes/ui/sound_texture_button.tscn" id="18_bs3r1"]
+[ext_resource type="PackedScene" uid="uid://cf1dxk0u24mtl" path="res://scenes/ui/sound_button.tscn" id="20_na36p"]
+
+[node name="Chronicle" type="CanvasLayer"]
+layer = 2
+script = ExtResource("1_hnn2e")
+entries = Array[Resource("res://resources/chronicle_entries/chronicle_entry.gd")]([ExtResource("2_col6x"), ExtResource("3_alini"), ExtResource("4_4r472"), ExtResource("5_rl2si"), ExtResource("6_5ilmr"), ExtResource("7_stree"), ExtResource("8_a36xu")])
+
+[node name="MarginContainer" type="MarginContainer" parent="."]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="HBoxContainer" type="HBoxContainer" parent="MarginContainer"]
+layout_mode = 2
+theme_override_constants/separation = -46
+
+[node name="PreviousEntryButton" parent="MarginContainer/HBoxContainer" instance=ExtResource("18_bs3r1")]
+layout_mode = 2
+size_flags_horizontal = 6
+size_flags_vertical = 4
+
+[node name="VBoxContainer" type="VBoxContainer" parent="MarginContainer/HBoxContainer"]
+layout_mode = 2
+size_flags_vertical = 4
+
+[node name="PanelContainer" type="PanelContainer" parent="MarginContainer/HBoxContainer/VBoxContainer"]
+custom_minimum_size = Vector2(450, 0)
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+theme_type_variation = &"BestiaryPanel"
+
+[node name="VBoxContainer" type="VBoxContainer" parent="MarginContainer/HBoxContainer/VBoxContainer/PanelContainer"]
+layout_mode = 2
+theme_override_constants/separation = 16
+
+[node name="name" type="Label" parent="MarginContainer/HBoxContainer/VBoxContainer/PanelContainer/VBoxContainer"]
+unique_name_in_owner = true
+layout_mode = 2
+theme_override_colors/font_shadow_color = Color(0.247059, 0.14902, 0.192157, 1)
+theme_override_colors/font_outline_color = Color(0.247059, 0.14902, 0.192157, 1)
+theme_override_constants/shadow_offset_x = 0
+theme_override_constants/shadow_offset_y = 0
+theme_override_constants/outline_size = 8
+theme_override_font_sizes/font_size = 32
+text = "Ratfink"
+horizontal_alignment = 1
+vertical_alignment = 2
+
+[node name="MarginContainer2" type="MarginContainer" parent="MarginContainer/HBoxContainer/VBoxContainer/PanelContainer/VBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_constants/margin_left = 12
+theme_override_constants/margin_right = 12
+
+[node name="ScrollContainer" type="ScrollContainer" parent="MarginContainer/HBoxContainer/VBoxContainer/PanelContainer/VBoxContainer/MarginContainer2"]
+custom_minimum_size = Vector2(0, 240)
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="Description" type="Label" parent="MarginContainer/HBoxContainer/VBoxContainer/PanelContainer/VBoxContainer/MarginContainer2/ScrollContainer"]
+unique_name_in_owner = true
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 1
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+text = "By way of incompetent zoning and city planning, the battle arena Lord Gareth uses for executions happens to sit directly atop a network of old sewer lines. In addition to giving the convicted's final moments the distinct background aroma of raw, feculent sewage, this has a darker, more horrible effect. 
+
+As the rats swarm in a tide of living fur and fangs, drawn by the trumpets of battle and smell of fresh meat, the convicted invariably feels a rush of hope as the vermin fall by the dozen. Once the real battle begins, that hope slips deliciously away."
+vertical_alignment = 1
+autowrap_mode = 2
+
+[node name="NextEntryButton" parent="MarginContainer/HBoxContainer" instance=ExtResource("18_bs3r1")]
+layout_mode = 2
+size_flags_horizontal = 6
+size_flags_vertical = 4
+flip_h = true
+
+[node name="MarginContainer3" type="MarginContainer" parent="MarginContainer"]
+layout_mode = 2
+size_flags_horizontal = 0
+size_flags_vertical = 8
+theme_override_constants/margin_left = 4
+theme_override_constants/margin_bottom = 4
+
+[node name="BackButton" parent="MarginContainer/MarginContainer3" instance=ExtResource("20_na36p")]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(50, 0)
+layout_mode = 2
+size_flags_horizontal = 0
+text = "Back"

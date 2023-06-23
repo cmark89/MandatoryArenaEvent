@@ -1,0 +1,13 @@
+[gd_resource type="Resource" script_class="BestiaryEntry" load_steps=3 format=3 uid="uid://b3nd6py5tp40n"]
+
+[ext_resource type="Texture2D" uid="uid://2qslwwk6grql" path="res://scenes/game_object/wizard_enemy/wizard_enemy.png" id="1_7x5rp"]
+[ext_resource type="Script" path="res://resources/bestiary_entries/bestiary_entry.gd" id="2_x1842"]
+
+[resource]
+script = ExtResource("2_x1842")
+id = "failed_wizard"
+name = "Failed Wizard"
+image = ExtResource("1_7x5rp")
+description = "Some rightfully wonder how it's possible for the Imperial Academy of Sorcery to boast a 100% graduation rate into the higher spheres of arcanery. The answer becomes apparent to any who watch the execution games. 
+
+Those with anything less than transcendent marks in their magical coursework are beaten, starved, and then let loose in the arena to face whatever pitiful soul has drawn Lord Gareth's attention. As they shamble weakly toward the convicted, unable to channel even the most meager of spells to aid them, one wonders who the true victim of this event is: the convicted, or the numberless minions thrown into the meat grinder."

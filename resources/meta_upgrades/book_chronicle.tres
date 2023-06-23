@@ -1,0 +1,14 @@
+[gd_resource type="Resource" script_class="MetaUpgrade" load_steps=3 format=3 uid="uid://dnoe7enw5ecsx"]
+
+[ext_resource type="Texture2D" uid="uid://df2x3g7iymf84" path="res://assets/ui/chronicle.png" id="1_3coye"]
+[ext_resource type="Script" path="res://resources/meta_upgrades/meta_upgrade.gd" id="2_4q18t"]
+
+[resource]
+script = ExtResource("2_4q18t")
+id = "book_chronicle"
+max_quantity = 1
+xp_cost = 500
+cost_increase_per_level = 10
+title = "Chronicle of Gareth"
+description = "Unlocks the Chronicle of Gareth!"
+icon = ExtResource("1_3coye")

@@ -1,0 +1,9 @@
+[gd_scene load_steps=2 format=3 uid="uid://om4k6y38eucx"]
+
+[ext_resource type="Script" path="res://scenes/components/enemy_sound_player_component.gd" id="1_4my6k"]
+
+[node name="EnemySoundPlayerComponent" type="AudioStreamPlayer2D"]
+max_distance = 300.0
+max_polyphony = 5
+bus = &"SFX"
+script = ExtResource("1_4my6k")

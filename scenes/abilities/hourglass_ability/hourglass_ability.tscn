@@ -1,0 +1,219 @@
+[gd_scene load_steps=23 format=3 uid="uid://c884y6stpco28"]
+
+[ext_resource type="Script" path="res://scenes/abilities/hourglass_ability/hourglass_ability.gd" id="1_lybal"]
+[ext_resource type="AudioStream" uid="uid://mfbtdxolksqp" path="res://assets/audio/hourglass_pulse.wav" id="2_683d5"]
+[ext_resource type="Script" path="res://scenes/components/hitbox.gd" id="3_js8wm"]
+[ext_resource type="Texture2D" uid="uid://c3oxjkmbxjh08" path="res://assets/particles/circle_03.png" id="3_yifbt"]
+[ext_resource type="Texture2D" uid="uid://cdvsyx52n0nnp" path="res://assets/particles/dirt_01.png" id="4_elbac"]
+
+[sub_resource type="Animation" id="Animation_gg34c"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("HitboxComponent/CollisionShape2D:disabled")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("DirtParticles:emitting")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("RingParticle:emitting")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [false]
+}
+
+[sub_resource type="Animation" id="Animation_pau6t"]
+resource_name = "default"
+length = 2.5
+loop_mode = 1
+step = 0.05
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("HitboxComponent/CollisionShape2D:disabled")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.4),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [false, true]
+}
+tracks/1/type = "method"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath(".")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(2.5),
+"transitions": PackedFloat32Array(1),
+"values": [{
+"args": [],
+"method": &"queue_free"
+}]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("DirtParticles:emitting")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("RingParticle:emitting")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0, 0.0001),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [false, true]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_0oi3r"]
+_data = {
+"RESET": SubResource("Animation_gg34c"),
+"default": SubResource("Animation_pau6t")
+}
+
+[sub_resource type="Gradient" id="Gradient_wumra"]
+colors = PackedColorArray(0.333333, 0.176471, 0, 0.403922, 1, 0.701961, 0.490196, 0.427451)
+
+[sub_resource type="GradientTexture1D" id="GradientTexture1D_bjptu"]
+gradient = SubResource("Gradient_wumra")
+
+[sub_resource type="Gradient" id="Gradient_dknxh"]
+colors = PackedColorArray(1, 0.701961, 0.490196, 0.184314, 1, 1, 1, 0)
+
+[sub_resource type="GradientTexture1D" id="GradientTexture1D_85euo"]
+gradient = SubResource("Gradient_dknxh")
+
+[sub_resource type="Curve" id="Curve_r5bk4"]
+_data = [Vector2(0, 0), 0.0, 0.0, 0, 0, Vector2(0.151685, 0.927273), 0.0, 0.0, 0, 0, Vector2(1, 1), 0.0, 0.0, 0, 0]
+point_count = 3
+
+[sub_resource type="CurveTexture" id="CurveTexture_joera"]
+curve = SubResource("Curve_r5bk4")
+
+[sub_resource type="ParticleProcessMaterial" id="ParticleProcessMaterial_hgeup"]
+lifetime_randomness = 0.5
+emission_shape = 1
+emission_sphere_radius = 10.0
+particle_flag_disable_z = true
+spread = 180.0
+gravity = Vector3(0, 0, 0)
+initial_velocity_min = 1.0
+initial_velocity_max = 15.0
+angular_velocity_min = -10.0
+angular_velocity_max = 10.0
+orbit_velocity_min = 0.0
+orbit_velocity_max = 0.0
+damping_min = 5.0
+damping_max = 10.0
+angle_max = 360.0
+scale_min = 0.1
+scale_max = 0.1
+scale_curve = SubResource("CurveTexture_joera")
+color_ramp = SubResource("GradientTexture1D_85euo")
+color_initial_ramp = SubResource("GradientTexture1D_bjptu")
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_rly15"]
+
+[sub_resource type="Gradient" id="Gradient_klk7o"]
+interpolation_mode = 2
+offsets = PackedFloat32Array(0, 0.113846, 1)
+colors = PackedColorArray(1, 1, 1, 0, 1, 1, 1, 0.537255, 1, 1, 1, 0)
+
+[sub_resource type="GradientTexture1D" id="GradientTexture1D_qtcrh"]
+gradient = SubResource("Gradient_klk7o")
+
+[sub_resource type="Curve" id="Curve_l65gu"]
+_data = [Vector2(0, 0), 0.0, 2.15758, 0, 0, Vector2(1, 1), 0.0, 0.0, 0, 0]
+point_count = 2
+
+[sub_resource type="CurveTexture" id="CurveTexture_85auo"]
+curve = SubResource("Curve_l65gu")
+
+[sub_resource type="ParticleProcessMaterial" id="ParticleProcessMaterial_h8jaw"]
+particle_flag_disable_z = true
+direction = Vector3(0, 0, 0)
+spread = 0.0
+gravity = Vector3(0, 0, 0)
+orbit_velocity_min = 0.0
+orbit_velocity_max = 0.0
+scale_min = 0.6
+scale_max = 0.6
+scale_curve = SubResource("CurveTexture_85auo")
+color_ramp = SubResource("GradientTexture1D_qtcrh")
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_88gfb"]
+
+[node name="HourglassAbility" type="Node2D"]
+script = ExtResource("1_lybal")
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+libraries = {
+"": SubResource("AnimationLibrary_0oi3r")
+}
+
+[node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("2_683d5")
+autoplay = true
+bus = &"SFX"
+
+[node name="DirtParticles" type="GPUParticles2D" parent="."]
+emitting = false
+amount = 4
+process_material = SubResource("ParticleProcessMaterial_hgeup")
+texture = ExtResource("4_elbac")
+lifetime = 1.5
+one_shot = true
+explosiveness = 0.9
+
+[node name="RingParticle" type="GPUParticles2D" parent="."]
+material = SubResource("ShaderMaterial_rly15")
+emitting = false
+amount = 1
+process_material = SubResource("ParticleProcessMaterial_h8jaw")
+texture = ExtResource("3_yifbt")
+lifetime = 0.5
+one_shot = true
+
+[node name="HitboxComponent" type="Area2D" parent="."]
+collision_layer = 4
+collision_mask = 0
+script = ExtResource("3_js8wm")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="HitboxComponent"]
+shape = SubResource("CircleShape2D_88gfb")

@@ -1,0 +1,12 @@
+[gd_scene load_steps=3 format=3 uid="uid://cput8a5thw7m4"]
+
+[ext_resource type="Script" path="res://scenes/abilities/whipstaff_ability_controller/whipstaff_ability_controller.gd" id="1_lmlk7"]
+[ext_resource type="PackedScene" uid="uid://c0wnqrtol5u2i" path="res://scenes/abilities/whipstaff_ability/whipstaff_ability.tscn" id="2_yesgi"]
+
+[node name="WhipStaffAbilityController" type="Node"]
+script = ExtResource("1_lmlk7")
+whipstaff_bullet_ability_scene = ExtResource("2_yesgi")
+
+[node name="Timer" type="Timer" parent="."]
+wait_time = 2.0
+autostart = true

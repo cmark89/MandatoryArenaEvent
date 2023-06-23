@@ -1,0 +1,14 @@
+[gd_resource type="Resource" script_class="MetaUpgrade" load_steps=3 format=3 uid="uid://d2bg8wgg2vnwv"]
+
+[ext_resource type="Texture2D" uid="uid://y2r0ueye64kh" path="res://assets/ui/blood_orbs.png" id="1_vtaep"]
+[ext_resource type="Script" path="res://resources/meta_upgrades/meta_upgrade.gd" id="2_ei11d"]
+
+[resource]
+script = ExtResource("2_ei11d")
+id = "blood_orbs"
+max_quantity = 4
+xp_cost = 250
+cost_increase_per_level = 250
+title = "Blood Orbs"
+description = "Adds blood orbs to the arena, granting power in exchange for life!"
+icon = ExtResource("1_vtaep")

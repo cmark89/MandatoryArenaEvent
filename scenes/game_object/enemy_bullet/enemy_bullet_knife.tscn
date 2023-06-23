@@ -1,0 +1,34 @@
+[gd_scene load_steps=5 format=3 uid="uid://ctstaky14r3ur"]
+
+[ext_resource type="Script" path="res://scenes/game_object/enemy_bullet/enemy_bullet.gd" id="1_hxq5r"]
+[ext_resource type="Texture2D" uid="uid://c746jyms8gn1m" path="res://scenes/abilities/butterflyknife_ability/knife.png" id="2_h7bkj"]
+[ext_resource type="Texture2D" uid="uid://doesse6fung8e" path="res://assets/particles/circle_05.png" id="3_4jlai"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_jg853"]
+size = Vector2(4, 12)
+
+[node name="EnemyBullet" type="Node2D"]
+script = ExtResource("1_hxq5r")
+
+[node name="Timer" type="Timer" parent="."]
+wait_time = 10.0
+one_shot = true
+autostart = true
+
+[node name="Area2D" type="Area2D" parent="."]
+collision_layer = 0
+collision_mask = 2
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+scale = Vector2(0.5, 0.5)
+shape = SubResource("RectangleShape2D_jg853")
+
+[node name="Projectile" type="Sprite2D" parent="."]
+scale = Vector2(0.5, 0.5)
+texture = ExtResource("2_h7bkj")
+
+[node name="PointLight2D" type="PointLight2D" parent="Projectile"]
+y_sort_enabled = true
+scale = Vector2(0.2, 0.2)
+energy = 0.3
+texture = ExtResource("3_4jlai")

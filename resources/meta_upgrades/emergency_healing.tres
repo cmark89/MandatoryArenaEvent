@@ -1,0 +1,14 @@
+[gd_resource type="Resource" script_class="MetaUpgrade" load_steps=3 format=3 uid="uid://32f78enfcbqf"]
+
+[ext_resource type="Texture2D" uid="uid://d114msjdtfl1f" path="res://assets/ui/emergency_healing.png" id="1_qj7rn"]
+[ext_resource type="Script" path="res://resources/meta_upgrades/meta_upgrade.gd" id="2_5vvu7"]
+
+[resource]
+script = ExtResource("2_5vvu7")
+id = "emergency_healing"
+max_quantity = 3
+xp_cost = 100
+cost_increase_per_level = 250
+title = "Emergency Healing"
+description = "Once per level, you may skip an upgrade for 25% healing"
+icon = ExtResource("1_qj7rn")

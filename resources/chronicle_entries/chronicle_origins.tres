@@ -1,0 +1,13 @@
+[gd_resource type="Resource" script_class="ChronicleEntry" load_steps=2 format=3 uid="uid://dthajgi38amym"]
+
+[ext_resource type="Script" path="res://resources/chronicle_entries/chronicle_entry.gd" id="1_wf1rs"]
+
+[resource]
+script = ExtResource("1_wf1rs")
+id = "chronicle_1"
+name = "Whence Came Gareth"
+description = "The origins of the Dark Lord are surrounded in mystery. According to some sources, when Gareth first emerged from the mists of obscurity, he spoke softly and with an accent tinged by classical Tasinati. However, due to his apparent lack of connection to Tasina, or to the southern continents at all, there is little evidence to support this, least of all because whatever accent he may have had in early life has vanished.
+
+Once, a diplomat appeared before Gareth to beg for mercy for his tiny country. Dark Lord Gareth was prepared to offer it in exchange for a substantial tithe until the diplomat made the critical mistake of asking the Dark Lord whence he hailed. 
+
+By morning, nothing remained of the country, save craters seething with smoke."

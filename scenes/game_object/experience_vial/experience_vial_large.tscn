@@ -1,0 +1,28 @@
+[gd_scene load_steps=5 format=3 uid="uid://cpk6k6kwmqvg5"]
+
+[ext_resource type="Script" path="res://scenes/game_object/experience_vial/experience_vial.gd" id="1_g6huc"]
+[ext_resource type="Texture2D" uid="uid://bulrkbihvmpxw" path="res://scenes/game_object/experience_vial/experience_vial3.png" id="2_2u7g0"]
+[ext_resource type="AudioStream" uid="uid://dj3ehy0bxqll7" path="res://assets/audio/xpPickup1.wav" id="3_h24t3"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_eflo6"]
+radius = 32.0
+
+[node name="ExperienceVial_Large" type="Node2D"]
+script = ExtResource("1_g6huc")
+xp_value = 25
+
+[node name="Area2D" type="Area2D" parent="."]
+collision_layer = 0
+collision_mask = 16
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+shape = SubResource("CircleShape2D_eflo6")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture = ExtResource("2_2u7g0")
+
+[node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("3_h24t3")
+volume_db = 4.0
+max_distance = 300.0
+bus = &"SFX"

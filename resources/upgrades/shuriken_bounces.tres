@@ -1,0 +1,12 @@
+[gd_resource type="Resource" script_class="AbilityUpgrade" load_steps=3 format=3 uid="uid://bxn7nm4gjal0l"]
+
+[ext_resource type="Texture2D" uid="uid://caglf2fe343ko" path="res://scenes/abilities/shuriken_ability/shuriken.png" id="1_oiwmv"]
+[ext_resource type="Script" path="res://resources/upgrades/ability_upgrade.gd" id="2_47ftu"]
+
+[resource]
+script = ExtResource("2_47ftu")
+id = "shuriken_bounces"
+max_quantity = 5
+name = "Exotic Bladecraft"
+description = "Shurikens bounce an additional time"
+icon = ExtResource("1_oiwmv")

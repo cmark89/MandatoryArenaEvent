@@ -1,0 +1,14 @@
+[gd_resource type="Resource" script_class="Ability" load_steps=4 format=3 uid="uid://bcnv10obqveka"]
+
+[ext_resource type="PackedScene" uid="uid://bx7t7bmykq2hx" path="res://scenes/abilities/entropyrod_ability_controller/entropyrod_ability_controller.tscn" id="1_d6qhm"]
+[ext_resource type="Texture2D" uid="uid://bhlolp1ilxajx" path="res://assets/ui/entropy_rod.png" id="2_ye7gs"]
+[ext_resource type="Script" path="res://resources/upgrades/ability.gd" id="3_t32gq"]
+
+[resource]
+script = ExtResource("3_t32gq")
+ability_controller_scene = ExtResource("1_d6qhm")
+id = "entropyrod"
+max_quantity = 1
+name = "Rod of Entropy"
+description = "Conjures gravity orbs that can hit multiple times per second!"
+icon = ExtResource("2_ye7gs")

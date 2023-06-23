@@ -1,0 +1,9 @@
+[gd_resource type="Resource" script_class="FinalBossVoiceLine" load_steps=3 format=3 uid="uid://b6hxv85ua6ss6"]
+
+[ext_resource type="AudioStream" uid="uid://dx0qn0btgvuol" path="res://resources/final_boss_voice_lines/audio/shoot1.wav" id="1_1yn8x"]
+[ext_resource type="Script" path="res://scenes/game_object/gareth_boss/final_boss_voice_line.gd" id="2_w1dxe"]
+
+[resource]
+script = ExtResource("2_w1dxe")
+file = ExtResource("1_1yn8x")
+text = "To ashes with you!"

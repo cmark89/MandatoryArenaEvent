@@ -1,0 +1,15 @@
+[gd_resource type="Resource" script_class="BestiaryEntry" load_steps=3 format=3 uid="uid://c3rmhh3h5rh4g"]
+
+[ext_resource type="Texture2D" uid="uid://cvwebgnn4gm3" path="res://scenes/game_object/chad_enemy/chad_enemy.png" id="1_doqii"]
+[ext_resource type="Script" path="res://resources/bestiary_entries/bestiary_entry.gd" id="2_bm6h3"]
+
+[resource]
+script = ExtResource("2_bm6h3")
+id = "boss_chad"
+name = "Chadicus the Valiant"
+image = ExtResource("1_doqii")
+description = "A low-born knave skilled in skullduggery and bladecraft, Chadicus attempted to assassinate the Dark Lord Gareth shortly after he rose to power. His attempt failed, and the Dark Lord easily shattered Chadicus's bones before he could even draw his dagger. However, he was impressed by the young scamp's ability to slip past his guards, and so made him an offer.
+
+Chadicus was thus uplifted into the noble spheres, given education and tutoring in bladecraft. Since then, he has become one of the most storied and successful heroes in the realm, delivering prize after prize to Lord Gareth.
+
+Though some would refer to him as a traitor of the people, such talk could land one in life-threatening jeopardy if overheard by a ratfink. So most of the poor simply say of Chadicus, \"What's even to say?\""

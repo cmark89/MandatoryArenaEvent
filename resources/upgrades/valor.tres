@@ -1,0 +1,12 @@
+[gd_resource type="Resource" script_class="AbilityUpgrade" load_steps=3 format=3 uid="uid://daivv335y2ylg"]
+
+[ext_resource type="Texture2D" uid="uid://dv186j40jyjma" path="res://assets/ui/valor.png" id="1_skbbf"]
+[ext_resource type="Script" path="res://resources/upgrades/ability_upgrade.gd" id="2_k00yi"]
+
+[resource]
+script = ExtResource("2_k00yi")
+id = "valor"
+max_quantity = 0
+name = "Valor"
+description = "Increases all damage by 10%"
+icon = ExtResource("1_skbbf")

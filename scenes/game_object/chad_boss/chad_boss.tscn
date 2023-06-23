@@ -1,0 +1,209 @@
+[gd_scene load_steps=28 format=3 uid="uid://bajw2kpsnjcws"]
+
+[ext_resource type="Script" path="res://scenes/game_object/chad_boss/chad_boss.gd" id="1_1fald"]
+[ext_resource type="PackedScene" uid="uid://d0517nee0uimk" path="res://scenes/components/health_component.tscn" id="2_p1w62"]
+[ext_resource type="PackedScene" uid="uid://cv3f38dxuexue" path="res://scenes/components/velocity_component.tscn" id="6_54ulj"]
+[ext_resource type="PackedScene" uid="uid://cvqlyaw8b4llq" path="res://scenes/components/hit_flash_component.tscn" id="7_2sn8i"]
+[ext_resource type="PackedScene" uid="uid://ctstaky14r3ur" path="res://scenes/game_object/enemy_bullet/enemy_bullet_knife.tscn" id="7_tse0h"]
+[ext_resource type="Shader" path="res://scenes/components/hit_flash_component.gdshader" id="8_e45wa"]
+[ext_resource type="Texture2D" uid="uid://cvwebgnn4gm3" path="res://scenes/game_object/chad_enemy/chad_enemy.png" id="9_qgwxk"]
+[ext_resource type="PackedScene" uid="uid://ek5cpdqdjubh" path="res://scenes/game_object/enemy_bullet/bullet_emitter_component.tscn" id="9_rqw1i"]
+[ext_resource type="PackedScene" uid="uid://y5nwa5dnoce1" path="res://scenes/components/death_component.tscn" id="10_uv1mc"]
+[ext_resource type="PackedScene" uid="uid://ccr5s7rjx3lgp" path="res://scenes/components/hurtbox.tscn" id="11_6m2pa"]
+[ext_resource type="AudioStream" uid="uid://bgvqbw28po11g" path="res://assets/audio/chad_knife.wav" id="13_a6bl8"]
+[ext_resource type="Texture2D" uid="uid://doesse6fung8e" path="res://assets/particles/circle_05.png" id="13_bk56o"]
+[ext_resource type="AudioStream" uid="uid://dxfb2kqvmvgmi" path="res://assets/audio/chad_dash.wav" id="14_2mc5y"]
+[ext_resource type="PackedScene" uid="uid://om4k6y38eucx" path="res://scenes/components/enemy_sound_player_component.tscn" id="14_ct0ec"]
+
+[sub_resource type="Animation" id="Animation_7ddmb"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:current_charge_speed")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [75]
+}
+
+[sub_resource type="Animation" id="Animation_8jk5f"]
+resource_name = "charge"
+length = 0.8
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:current_charge_speed")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.2, 0.6, 0.8),
+"transitions": PackedFloat32Array(1, 1, 1, 1),
+"update": 0,
+"values": [75, 240, 140, 75]
+}
+
+[sub_resource type="Animation" id="Animation_q3ysr"]
+resource_name = "walk"
+loop_mode = 1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Visuals/Sprite2D:position")
+tracks/0/interp = 2
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.3, 0.7),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 0,
+"values": [Vector2(0, 0), Vector2(-1, -1), Vector2(1, -1)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Visuals/Sprite2D:rotation")
+tracks/1/interp = 2
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 0.3, 0.7),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 0,
+"values": [0.0, -0.0872665, 0.0872665]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_7girf"]
+_data = {
+"RESET": SubResource("Animation_7ddmb"),
+"charge": SubResource("Animation_8jk5f"),
+"walk": SubResource("Animation_q3ysr")
+}
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_6taop"]
+resource_local_to_scene = true
+shader = ExtResource("8_e45wa")
+shader_parameter/lerp_percent = 0.0
+shader_parameter/color = Color(1, 1, 1, 1)
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_k1je1"]
+radius = 12.0
+
+[sub_resource type="CanvasItemMaterial" id="CanvasItemMaterial_30vm8"]
+blend_mode = 1
+
+[sub_resource type="Gradient" id="Gradient_5sjk6"]
+offsets = PackedFloat32Array(0, 0.430769, 0.747692, 1)
+colors = PackedColorArray(0, 0.984314, 1, 0, 0.0584615, 0.984308, 1, 1, 1, 1, 1, 1, 1, 1, 1, 0)
+
+[sub_resource type="GradientTexture1D" id="GradientTexture1D_6dt7c"]
+gradient = SubResource("Gradient_5sjk6")
+
+[sub_resource type="Curve" id="Curve_70kip"]
+_data = [Vector2(0, 0), 0.0, 1.02201, 0, 0, Vector2(1, 1), 1.73659, 0.0, 0, 0]
+point_count = 2
+
+[sub_resource type="CurveTexture" id="CurveTexture_os8o1"]
+curve = SubResource("Curve_70kip")
+
+[sub_resource type="ParticleProcessMaterial" id="ParticleProcessMaterial_cbcs6"]
+emission_shape = 6
+emission_ring_axis = Vector3(0, 0, 1)
+emission_ring_height = 1.0
+emission_ring_radius = 40.0
+emission_ring_inner_radius = 15.0
+particle_flag_disable_z = true
+spread = 180.0
+gravity = Vector3(0, 0, 0)
+orbit_velocity_min = 0.0
+orbit_velocity_max = 0.0
+radial_accel_min = -280.0
+radial_accel_max = -280.0
+angle_min = -180.0
+angle_max = 180.0
+scale_min = 0.1
+scale_max = 0.4
+scale_curve = SubResource("CurveTexture_os8o1")
+color_ramp = SubResource("GradientTexture1D_6dt7c")
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_gcnki"]
+radius = 7.75
+
+[node name="ChadBoss" type="CharacterBody2D" groups=["enemy"]]
+scale = Vector2(5, 5)
+collision_layer = 8
+collision_mask = 9
+motion_mode = 1
+script = ExtResource("1_1fald")
+bestiary_entry_id = "boss_chad"
+damage = 5
+current_charge_speed = 75
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+autoplay = "walk"
+libraries = {
+"": SubResource("AnimationLibrary_7girf")
+}
+
+[node name="AttackTimer" type="Timer" parent="."]
+
+[node name="HealthComponent" parent="." instance=ExtResource("2_p1w62")]
+max_health = 3000.0
+
+[node name="VelocityComponent" parent="." instance=ExtResource("6_54ulj")]
+max_speed = 75
+acceleration = 1.0
+
+[node name="HitFlashComponent" parent="." node_paths=PackedStringArray("health_component", "sprite") instance=ExtResource("7_2sn8i")]
+health_component = NodePath("../HealthComponent")
+sprite = NodePath("../Visuals/Sprite2D")
+hit_flash_material = SubResource("ShaderMaterial_6taop")
+
+[node name="BulletEmitterComponent" parent="." instance=ExtResource("9_rqw1i")]
+bullet_scene = ExtResource("7_tse0h")
+
+[node name="DeathComponent" parent="." node_paths=PackedStringArray("health_component", "sprite") instance=ExtResource("10_uv1mc")]
+health_component = NodePath("../HealthComponent")
+sprite = NodePath("../Visuals/Sprite2D")
+particle_scale = 5.0
+
+[node name="HurtboxComponent" parent="." node_paths=PackedStringArray("health_component") instance=ExtResource("11_6m2pa")]
+health_component = NodePath("../HealthComponent")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="HurtboxComponent"]
+position = Vector2(0, -4)
+shape = SubResource("CircleShape2D_k1je1")
+
+[node name="Visuals" type="Node2D" parent="."]
+scale = Vector2(1, 0.866667)
+
+[node name="Sprite2D" type="Sprite2D" parent="Visuals"]
+texture = ExtResource("9_qgwxk")
+offset = Vector2(0, -4)
+
+[node name="ChargeParticles" type="GPUParticles2D" parent="."]
+material = SubResource("CanvasItemMaterial_30vm8")
+emitting = false
+amount = 24
+process_material = SubResource("ParticleProcessMaterial_cbcs6")
+texture = ExtResource("13_bk56o")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(0, -3)
+shape = SubResource("CircleShape2D_gcnki")
+
+[node name="EnemySoundPlayerComponent" parent="." instance=ExtResource("14_ct0ec")]
+
+[node name="KnifeShotPlayer2D" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("13_a6bl8")
+volume_db = 5.0
+max_distance = 500.0
+max_polyphony = 25
+bus = &"SFX"
+
+[node name="DashPlayer2D" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("14_2mc5y")
+max_distance = 500.0
+max_polyphony = 25
+bus = &"SFX"
