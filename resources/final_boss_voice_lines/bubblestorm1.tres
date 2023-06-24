@@ -1,6 +1,6 @@
 [gd_resource type="Resource" script_class="FinalBossVoiceLine" load_steps=3 format=3 uid="uid://djjpvty87raf8"]
 
-[ext_resource type="AudioStream" uid="uid://871c6p03otiu" path="res://resources/final_boss_voice_lines/audio/bubblestream1.wav" id="1_clt14"]
+[ext_resource type="AudioStream" uid="uid://871c6p03otiu" path="res://assets/audio/final_boss_audio/bubblestream1.wav" id="1_clt14"]
 [ext_resource type="Script" path="res://scenes/game_object/gareth_boss/final_boss_voice_line.gd" id="2_arfts"]
 
 [resource]

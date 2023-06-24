@@ -200,7 +200,7 @@ _data = {
 "walk": SubResource("Animation_q3ysr")
 }
 
-[sub_resource type="ShaderMaterial" id="ShaderMaterial_mb5rm"]
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_43l6v"]
 resource_local_to_scene = true
 shader = ExtResource("5_3qn5n")
 shader_parameter/lerp_percent = 0.0
@@ -276,7 +276,7 @@ acceleration = 1.0
 [node name="HitFlashComponent" parent="." node_paths=PackedStringArray("health_component", "sprite") instance=ExtResource("4_tw5q1")]
 health_component = NodePath("../HealthComponent")
 sprite = NodePath("../Visuals/Sprite2D")
-hit_flash_material = SubResource("ShaderMaterial_mb5rm")
+hit_flash_material = SubResource("ShaderMaterial_43l6v")
 
 [node name="BulletEmitterComponent" parent="." instance=ExtResource("6_os8ry")]
 bullet_scene = ExtResource("7_mio5l")

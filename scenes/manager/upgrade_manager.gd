@@ -147,7 +147,6 @@ func on_reroll(upgrade_screen_instance: Node):
 
 func update_upgrade_pool(chosen_upgrade: AbilityUpgrade):
 	if weapons_picked >= MAX_WEAPONS && !weapons_purged:
-		# TODO: REMOVE ALL WEAPONS HERE SO WE CAN'T GET TOO MANY
 		weapons_purged = true
 		upgrade_pool.remove_item(upgrade_axe)
 		upgrade_pool.remove_item(upgrade_hammer)

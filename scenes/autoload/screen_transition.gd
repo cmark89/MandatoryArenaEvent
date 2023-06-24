@@ -11,7 +11,7 @@ func transition():
 	visible = true
 	animation_player.play("in")
 	await transition_halfway
-	
+
 	animation_player.play("out")
 	await animation_player.animation_finished
 	visible = false

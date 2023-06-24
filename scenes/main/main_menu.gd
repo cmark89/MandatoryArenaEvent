@@ -1,11 +1,14 @@
 extends CanvasLayer
 
+@onready var game_scene = load("res://scenes/main/main.tscn")
+
 var options_scene = preload("res://scenes/main/options_menu.tscn")
 var upgrades_scene = preload("res://scenes/main/meta_menu.tscn")
 var difficulty_select_scene = preload("res://scenes/main/difficulty_menu.tscn")
 var bestiary_scene = preload("res://scenes/main/bestiary.tscn")
 var chronicle_scene = preload("res://scenes/main/chronicle.tscn")
 var credits_scene = preload("res://scenes/main/credits.tscn")
+
 @onready var main_menu_container = $MainMenuContainer
 @onready var bestiary_button = %BestiaryButton
 @onready var chronicle_button = %ChronicleButton
@@ -44,7 +47,16 @@ func on_play_pressed():
 		ScreenTransition.transition()
 		await ScreenTransition.transition_halfway
 		MusicPlayer.play_normal_battle_theme()
-		get_tree().change_scene_to_file("res://scenes/main/main.tscn")
+		
+		var game_scene_instance = game_scene.instantiate()
+		# Add the new scene to the root 
+		get_tree().get_root().add_child(game_scene_instance)
+		
+		# Delete the "current" scene (the menu)
+		get_tree().get_current_scene().queue_free()
+		
+		# Finally, inform the scene tree that the new scene is now the "current" scene
+		get_tree().set_current_scene(game_scene_instance)
 	
 
 func update_book_visibility():

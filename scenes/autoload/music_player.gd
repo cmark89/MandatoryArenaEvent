@@ -1,9 +1,9 @@
 extends AudioStreamPlayer
 
-var normal_battle_theme = preload("res://assets/audio/SurviveOrDie_IfYouWantToIGuess.mp3")
-var true_last_boss_theme = preload("res://assets/audio/PrayINeverFindYou.mp3")
-var menu_theme = preload("res://assets/audio/EnterTheArena.mp3")
-var ending_theme = preload("res://assets/audio/WhenNoBloodRemainsToSpill.mp3")
+var normal_battle_theme = preload("res://assets/audio/battle_theme.mp3")
+var true_last_boss_theme = preload("res://assets/audio/final_boss_theme.mp3")
+var menu_theme = preload("res://assets/audio/menu_theme.mp3")
+var ending_theme = preload("res://assets/audio/ending_theme.mp3")
 
 var default_volume
 
@@ -39,7 +39,6 @@ func stop_music(fade_time: float):
 	if (fade_time <= 0):
 		stop()
 		
-	# TODO: Test this works
 	var tween = create_tween()
 	tween.tween_property(self, "volume_db", -50, fade_time)
 	tween.tween_callback(stop)

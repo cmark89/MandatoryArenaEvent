@@ -1,4 +1,4 @@
-[gd_scene load_steps=17 format=3 uid="uid://cv4vjo5obp1gf"]
+[gd_scene load_steps=19 format=3 uid="uid://cv4vjo5obp1gf"]
 
 [ext_resource type="PackedScene" uid="uid://ds3gmrvfcgrag" path="res://scenes/game_object/player/player.tscn" id="1_3nlg4"]
 [ext_resource type="PackedScene" uid="uid://bc8cr22uftre2" path="res://scenes/ui/arena_time_ui.tscn" id="1_i1gxw"]
@@ -8,7 +8,9 @@
 [ext_resource type="PackedScene" uid="uid://dw4d82o5s48yi" path="res://scenes/manager/arena_time_manager.tscn" id="2_8b3x2"]
 [ext_resource type="PackedScene" uid="uid://bsip6coq2gjih" path="res://scenes/ui/end_screen.tscn" id="2_e5mad"]
 [ext_resource type="PackedScene" uid="uid://cn4vfwv02ab5j" path="res://scenes/manager/upgrade_manager.tscn" id="3_hwnsc"]
+[ext_resource type="PackedScene" uid="uid://c71o334g8k68x" path="res://scenes/main/pause_menu.tscn" id="3_p68wb"]
 [ext_resource type="PackedScene" uid="uid://cw24jo07gkqwx" path="res://scenes/game_object/game_camera/game_camera.tscn" id="3_pc3n8"]
+[ext_resource type="PackedScene" uid="uid://c4t1rpbb3hwmo" path="res://scenes/main/ending_player.tscn" id="4_h22w0"]
 [ext_resource type="PackedScene" uid="uid://c30po7bj1r5ha" path="res://scenes/ui/boss_health_bar.tscn" id="5_hmsc3"]
 [ext_resource type="PackedScene" uid="uid://ce0igqjqt8qm1" path="res://scenes/ui/chosen_weapon_ui.tscn" id="6_xhr7q"]
 [ext_resource type="PackedScene" uid="uid://cb05mipqa6iyp" path="res://scenes/manager/enemy_manager.tscn" id="7_1bwt7"]
@@ -20,6 +22,8 @@
 [node name="Main" type="Node" groups=["main"]]
 script = ExtResource("1_ja2sk")
 end_screen_scene = ExtResource("2_e5mad")
+pause_menu = ExtResource("3_p68wb")
+ending_player_scene = ExtResource("4_h22w0")
 
 [node name="Vignette" parent="." instance=ExtResource("12_81yit")]
 

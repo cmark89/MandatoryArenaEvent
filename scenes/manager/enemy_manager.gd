@@ -8,24 +8,24 @@ const SPAWN_RADIUS = 375
 @export var arena_time_manager: Node
 var spawning = true
 
-var basic_enemy_scene: PackedScene = preload("res://scenes/game_object/basic_enemy/basic_enemy.tscn")
-var wizard_enemy_scene: PackedScene = preload("res://scenes/game_object/wizard_enemy/wizard_enemy.tscn")
-var bat_enemy_scene: PackedScene = preload("res://scenes/game_object/bat_enemy/bat_enemy.tscn")
-var ratfink_enemy_scene: PackedScene = preload("res://scenes/game_object/ratfink_enemy/ratfink_enemy.tscn")
-var gladiator_enemy_scene: PackedScene = preload("res://scenes/game_object/gladiator_enemy/gladiator_enemy.tscn")
-var apprentice_enemy_scene: PackedScene = preload("res://scenes/game_object/apprentice_enemy/apprentice_enemy.tscn")
-var chad_enemy_scene: PackedScene = preload("res://scenes/game_object/chad_enemy/chad_enemy.tscn")
-var exhumed_enemy_scene: PackedScene = preload("res://scenes/game_object/exhumed_enemy/exhumed_enemy.tscn")
-var spider_enemy_scene: PackedScene = preload("res://scenes/game_object/spider_enemy/spider_enemy.tscn")
-var giant_enemy_scene: PackedScene = preload("res://scenes/game_object/giant_enemy/giant_enemy.tscn")
-var ghost_enemy_scene: PackedScene = preload("res://scenes/game_object/ghost_enemy/ghost_enemy.tscn")
+@export var basic_enemy_scene: PackedScene
+@export var wizard_enemy_scene: PackedScene
+@export var bat_enemy_scene: PackedScene
+@export var ratfink_enemy_scene: PackedScene
+@export var gladiator_enemy_scene: PackedScene
+@export var apprentice_enemy_scene: PackedScene
+@export var chad_enemy_scene: PackedScene
+@export var exhumed_enemy_scene: PackedScene
+@export var spider_enemy_scene: PackedScene
+@export var giant_enemy_scene: PackedScene
+@export var ghost_enemy_scene: PackedScene
 
-var boss_crab_scene: PackedScene = preload("res://scenes/game_object/crab_boss/crab_boss.tscn")
-var boss_chad_scene: PackedScene = preload("res://scenes/game_object/chad_boss/chad_boss.tscn")
-var boss_executioner_scene: PackedScene = preload("res://scenes/game_object/executioner_boss/executioner_boss.tscn")
-var boss_gareth_scene: PackedScene = preload("res://scenes/game_object/gareth_boss/gareth_boss.tscn")
+@export var boss_crab_scene: PackedScene
+@export var boss_chad_scene: PackedScene
+@export var boss_executioner_scene: PackedScene
+@export var boss_gareth_scene: PackedScene
 
-var executed_enemy_scene: PackedScene = preload("res://scenes/game_object/executed_enemy/executed_enemy.tscn")
+@export var executed_enemy_scene: PackedScene
 
 var base_spawn_time = 0
 var enemy_table: WeightedTable = WeightedTable.new()

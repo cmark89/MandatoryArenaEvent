@@ -1,8 +1,8 @@
 extends CharacterBody2D
-
+class_name Player
 @onready var damage_interval_timer = $DamageIntervalTimer
 @onready var collision_area_2d = $CollisionArea2D
-@onready var health_component = $HealthComponent
+@onready var health_component: HealthComponent = $HealthComponent
 @onready var health_bar = $HealthBar
 @onready var abilities = $Abilities
 @onready var visuals: Node2D = $Visuals
@@ -22,7 +22,9 @@ func _ready():
 	if extra_health > 0:
 		health_component.add_health(extra_health, true)
 	
-	arena_time_manager.arena_difficulty_increased.connect(on_arena_difficulty_increased)
+	if arena_time_manager != null:
+		arena_time_manager.arena_difficulty_increased.connect(on_arena_difficulty_increased)
+		
 	base_speed = velocity_component.max_speed
 	damage_interval_timer.timeout.connect(on_damage_interval_timer_timeout)
 	collision_area_2d.body_entered.connect(on_body_entered)

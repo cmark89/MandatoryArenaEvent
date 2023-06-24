@@ -6,7 +6,7 @@ signal back_pressed
 @onready var maniac_button = %ManiacButton
 @onready var nightmare_button = %NightmareButton
 
-var main_scene = preload("res://scenes/main/main.tscn")
+@onready var main_scene = load("res://scenes/main/main.tscn")
 
 func _ready():
 	normal_button.pressed.connect(start_game.bind("NORMAL"))
@@ -25,8 +25,6 @@ func _unhandled_input(event):
 
 
 func start_game(difficulty: String):
-	# TODO: Here we need to pass some value to the game to make sure the difficulty
-	# is properly set
 	MusicPlayer.stop_music(0.3)
 	ScreenTransition.transition()
 	await ScreenTransition.transition_halfway

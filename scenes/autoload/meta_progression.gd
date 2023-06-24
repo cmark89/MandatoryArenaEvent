@@ -33,7 +33,6 @@ func load_save_file():
 		return
 	var file = FileAccess.open(SAVE_FILE_PATH, FileAccess.READ)
 	save_data = file.get_var()
-	print(save_data)
 
 
 func save():
@@ -58,8 +57,15 @@ func save_settings(window_mode: int, sfx_volume: float, music_volume: float):
 
 
 func apply_loaded_settings():
-	DisplayServer.window_set_mode(save_data["window_mode"])
-	
+	var mode = save_data["window_mode"]
+	DisplayServer.window_set_mode(mode)
+	if mode == DisplayServer.WINDOW_MODE_FULLSCREEN:
+		DisplayServer.window_set_flag(DisplayServer.WINDOW_FLAG_BORDERLESS, false)
+	else:
+		var width = ProjectSettings.get_setting("display/window/size/viewport_width")
+		var height = ProjectSettings.get_setting("display/window/size/viewport_height")
+		DisplayServer.window_set_size(Vector2(width*2,height*2))
+
 	var bus_index = AudioServer.get_bus_index("SFX")
 	var volume_db = linear_to_db(save_data["sfx_volume"])
 	AudioServer.set_bus_volume_db(bus_index, volume_db)

@@ -95,7 +95,7 @@ _data = {
 "walk": SubResource("Animation_nl7hr")
 }
 
-[sub_resource type="ShaderMaterial" id="ShaderMaterial_j0dd0"]
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_jvbhb"]
 resource_local_to_scene = true
 shader = ExtResource("5_l4l5r")
 shader_parameter/lerp_percent = 0.0
@@ -139,7 +139,7 @@ one_shot = true
 health_component = NodePath("../HealthComponent")
 sprite = NodePath("../Visuals/Sprite2D")
 damage_flash_color = Color(1, 0, 0, 1)
-hit_flash_material = SubResource("ShaderMaterial_j0dd0")
+hit_flash_material = SubResource("ShaderMaterial_jvbhb")
 
 [node name="HealthBar" type="ProgressBar" parent="."]
 custom_minimum_size = Vector2(32, 6)

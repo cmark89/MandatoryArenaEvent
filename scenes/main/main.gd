@@ -3,15 +3,15 @@ extends Node
 @export var end_screen_scene: PackedScene
 
 var difficulty = "NORMAL"
-var pause_menu = preload("res://scenes/main/pause_menu.tscn")
-var ending_player_scene = preload("res://scenes/main/ending_player.tscn")
+@export var pause_menu: PackedScene
+@export var ending_player_scene: PackedScene
 var rerolls_left = 0
 var emergency_heals_left = 0
 var blood_orbs_consumed = 0
 var true_final_boss_unlocked
 
 func _ready():
-	$%Player.health_component.died.connect(on_player_died)
+	($%Player as Player).health_component.died.connect(on_player_died)
 	%EnemyManager.difficulty = difficulty
 	GameEvents.true_last_boss_killed.connect(on_true_last_boss_killed)
 	if MetaProgression.has_upgrade("reroll"):

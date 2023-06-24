@@ -5,6 +5,7 @@ extends CanvasLayer
 
 var victory_theme = preload("res://assets/audio/victory.mp3")
 var defeat_theme = preload("res://assets/audio/defeat.mp3")
+@onready var main_menu_scene = load("res://scenes/main/main_menu.tscn")
 
 func _ready():
 	var tween = create_tween()
@@ -45,7 +46,16 @@ func on_quit_button_pressed():
 	await ScreenTransition.transition_halfway
 	MusicPlayer.play_menu_theme()
 	get_tree().paused = false
-	get_tree().change_scene_to_file("res://scenes/main/main_menu.tscn")
+	
+	var main_menu_instance = main_menu_scene.instantiate()
+	# Add the new scene to the root 
+	get_tree().get_root().add_child(main_menu_instance)
+	
+	# Delete the "current" scene (the menu)
+	get_tree().get_current_scene().queue_free()
+	
+	# Finally, inform the scene tree that the new scene is now the "current" scene
+	get_tree().set_current_scene(main_menu_instance)
 
 
 func set_defeat():

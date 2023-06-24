@@ -1,18 +1,50 @@
-[gd_scene load_steps=4 format=3 uid="uid://cb05mipqa6iyp"]
+[gd_scene load_steps=20 format=3 uid="uid://cb05mipqa6iyp"]
 
 [ext_resource type="Script" path="res://scenes/manager/enemy_manager.gd" id="1_j1dyq"]
 [ext_resource type="PackedScene" uid="uid://bsip6coq2gjih" path="res://scenes/ui/end_screen.tscn" id="2_rduqh"]
-[ext_resource type="AudioStream" uid="uid://c7eyxmc1ubrrk" path="res://resources/final_boss_voice_lines/audio/death.wav" id="3_80smx"]
+[ext_resource type="PackedScene" uid="uid://dqiqje5juk4xr" path="res://scenes/game_object/basic_enemy/basic_enemy.tscn" id="3_kxxy4"]
+[ext_resource type="PackedScene" uid="uid://tjsqabfvgvkx" path="res://scenes/game_object/wizard_enemy/wizard_enemy.tscn" id="4_1jrlj"]
+[ext_resource type="PackedScene" uid="uid://dfkeqtyrwqsp" path="res://scenes/game_object/bat_enemy/bat_enemy.tscn" id="5_aexya"]
+[ext_resource type="PackedScene" uid="uid://dqxg8w1q08oir" path="res://scenes/game_object/ratfink_enemy/ratfink_enemy.tscn" id="6_wlvui"]
+[ext_resource type="PackedScene" uid="uid://bva7y62o7mebd" path="res://scenes/game_object/gladiator_enemy/gladiator_enemy.tscn" id="7_w4dxm"]
+[ext_resource type="PackedScene" uid="uid://buenthpe5is0a" path="res://scenes/game_object/apprentice_enemy/apprentice_enemy.tscn" id="8_1mm5c"]
+[ext_resource type="PackedScene" uid="uid://q52m2dna718q" path="res://scenes/game_object/chad_enemy/chad_enemy.tscn" id="9_bkaye"]
+[ext_resource type="PackedScene" uid="uid://b8mlmcdyw0qs4" path="res://scenes/game_object/exhumed_enemy/exhumed_enemy.tscn" id="10_em1ps"]
+[ext_resource type="PackedScene" uid="uid://c3fxbmtrdus52" path="res://scenes/game_object/spider_enemy/spider_enemy.tscn" id="11_8gtog"]
+[ext_resource type="PackedScene" uid="uid://deq4gsycjq7on" path="res://scenes/game_object/giant_enemy/giant_enemy.tscn" id="12_yom1h"]
+[ext_resource type="PackedScene" uid="uid://csyigko5w1ooq" path="res://scenes/game_object/ghost_enemy/ghost_enemy.tscn" id="13_j0m10"]
+[ext_resource type="PackedScene" uid="uid://bhqtfc187glvc" path="res://scenes/game_object/crab_boss/crab_boss.tscn" id="14_lwk3b"]
+[ext_resource type="PackedScene" uid="uid://bajw2kpsnjcws" path="res://scenes/game_object/chad_boss/chad_boss.tscn" id="15_8g4pa"]
+[ext_resource type="PackedScene" uid="uid://wexlmiw3757o" path="res://scenes/game_object/executioner_boss/executioner_boss.tscn" id="16_cqr48"]
+[ext_resource type="PackedScene" uid="uid://4y7cdl8s2bcs" path="res://scenes/game_object/gareth_boss/gareth_boss.tscn" id="17_n7u82"]
+[ext_resource type="PackedScene" uid="uid://biqeosl7ijdk5" path="res://scenes/game_object/executed_enemy/executed_enemy.tscn" id="18_pbmg4"]
+[ext_resource type="AudioStream" uid="uid://c7eyxmc1ubrrk" path="res://assets/audio/final_boss_audio/death.wav" id="19_bn5eh"]
 
 [node name="EnemyManager" type="Node"]
 script = ExtResource("1_j1dyq")
 end_screen_scene = ExtResource("2_rduqh")
+basic_enemy_scene = ExtResource("3_kxxy4")
+wizard_enemy_scene = ExtResource("4_1jrlj")
+bat_enemy_scene = ExtResource("5_aexya")
+ratfink_enemy_scene = ExtResource("6_wlvui")
+gladiator_enemy_scene = ExtResource("7_w4dxm")
+apprentice_enemy_scene = ExtResource("8_1mm5c")
+chad_enemy_scene = ExtResource("9_bkaye")
+exhumed_enemy_scene = ExtResource("10_em1ps")
+spider_enemy_scene = ExtResource("11_8gtog")
+giant_enemy_scene = ExtResource("12_yom1h")
+ghost_enemy_scene = ExtResource("13_j0m10")
+boss_crab_scene = ExtResource("14_lwk3b")
+boss_chad_scene = ExtResource("15_8g4pa")
+boss_executioner_scene = ExtResource("16_cqr48")
+boss_gareth_scene = ExtResource("17_n7u82")
+executed_enemy_scene = ExtResource("18_pbmg4")
 
 [node name="Timer" type="Timer" parent="."]
 one_shot = true
 autostart = true
 
 [node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
-stream = ExtResource("3_80smx")
+stream = ExtResource("19_bn5eh")
 volume_db = -3.0
 bus = &"SFX"

@@ -1,6 +1,6 @@
 [gd_scene load_steps=3 format=3 uid="uid://biu2ws7u6mryq"]
 
-[ext_resource type="AudioStream" uid="uid://bfd28k5tv2782" path="res://assets/audio/EnterTheArena.mp3" id="1_kwd2d"]
+[ext_resource type="AudioStream" uid="uid://bfd28k5tv2782" path="res://assets/audio/menu_theme.mp3" id="1_kwd2d"]
 [ext_resource type="Script" path="res://scenes/autoload/music_player.gd" id="2_qahm7"]
 
 [node name="MusicPlayer" type="AudioStreamPlayer"]
