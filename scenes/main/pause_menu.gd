@@ -58,15 +58,7 @@ func on_menu_pressed():
 	MusicPlayer.play_menu_theme()
 	get_tree().paused = false
 	
-	var main_menu_instance = main_menu_scene.instantiate()
-	# Add the new scene to the root 
-	get_tree().get_root().add_child(main_menu_instance)
-	
-	# Delete the "current" scene (the menu)
-	get_tree().get_current_scene().queue_free()
-	
-	# Finally, inform the scene tree that the new scene is now the "current" scene
-	get_tree().set_current_scene(main_menu_instance)
+	SceneManager.change_scene_to_packed(main_menu_scene)
 	
 
 func on_options_pressed():

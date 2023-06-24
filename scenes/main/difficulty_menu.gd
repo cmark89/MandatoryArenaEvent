@@ -6,7 +6,7 @@ signal back_pressed
 @onready var maniac_button = %ManiacButton
 @onready var nightmare_button = %NightmareButton
 
-@onready var main_scene = load("res://scenes/main/main.tscn")
+@onready var main_scene = preload("res://scenes/main/main.tscn")
 
 func _ready():
 	normal_button.pressed.connect(start_game.bind("NORMAL"))
@@ -29,20 +29,9 @@ func start_game(difficulty: String):
 	ScreenTransition.transition()
 	await ScreenTransition.transition_halfway
 	MusicPlayer.play_normal_battle_theme()
-	
-	var main_scene_instance = main_scene.instantiate()
-	main_scene_instance.difficulty = difficulty
-	# Since we want to parameterize our new scene, we cannot simply "change"
-	# the scene. We need to do it manually. Thus we...
-	
-	# Add the new scene to the root 
-	get_tree().get_root().add_child(main_scene_instance)
-	
-	# Delete the "current" scene (the menu)
-	get_tree().get_current_scene().queue_free()
-	
-	# Finally, inform the scene tree that the new scene is now the "current" scene
-	get_tree().set_current_scene(main_scene_instance)
-	
+	GlobalVariables.current_difficulty = difficulty
+	SceneManager.change_scene_to_packed(main_scene, true)
+
+
 func on_back_pressed():
 	back_pressed.emit()

@@ -1,13 +1,24 @@
-[gd_scene load_steps=6 format=3 uid="uid://ccig270jhkmop"]
+[gd_scene load_steps=6 format=3 uid="uid://btovakldl8lvj"]
 
-[ext_resource type="Script" path="res://scenes/main/main_debug.gd" id="1_pvthw"]
 [ext_resource type="PackedScene" uid="uid://c71o334g8k68x" path="res://scenes/main/pause_menu.tscn" id="3_iy7n3"]
 [ext_resource type="PackedScene" uid="uid://cw24jo07gkqwx" path="res://scenes/game_object/game_camera/game_camera.tscn" id="13_d1u1a"]
 [ext_resource type="TileSet" uid="uid://chy66sleikoqk" path="res://resources/tileset_dungeon.tres" id="14_srw3l"]
 [ext_resource type="PackedScene" uid="uid://ds3gmrvfcgrag" path="res://scenes/game_object/player/player.tscn" id="16_7jlev"]
 
+[sub_resource type="GDScript" id="GDScript_xn06a"]
+script/source = "extends Node
+
+var difficulty = \"NORMAL\"
+@export var pause_menu: PackedScene
+
+func _unhandled_input(event):
+	if event.is_action_pressed(\"pause\"):
+		add_child(pause_menu.instantiate())
+		get_tree().root.set_input_as_handled()
+"
+
 [node name="MainDebug" type="Node" groups=["main"]]
-script = ExtResource("1_pvthw")
+script = SubResource("GDScript_xn06a")
 pause_menu = ExtResource("3_iy7n3")
 
 [node name="GameCamera" parent="." instance=ExtResource("13_d1u1a")]

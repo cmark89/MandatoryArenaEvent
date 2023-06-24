@@ -3,7 +3,7 @@
 [ext_resource type="Script" path="res://scenes/main/credits.gd" id="1_5i1u4"]
 [ext_resource type="PackedScene" uid="uid://cf1dxk0u24mtl" path="res://scenes/ui/sound_button.tscn" id="20_vw6hb"]
 
-[node name="Credits" type="CanvasLayer"]
+[node name="Credits" type="CanvasLayer" groups=["main_menu_child"]]
 layer = 2
 script = ExtResource("1_5i1u4")
 

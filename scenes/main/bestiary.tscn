@@ -21,7 +21,7 @@
 [ext_resource type="Resource" uid="uid://cxi2fom0mefbf" path="res://resources/bestiary_entries/enemy_boss_executioner.tres" id="15_seru0"]
 [ext_resource type="Resource" uid="uid://n88bsfkv4v3q" path="res://resources/bestiary_entries/enemy_boss_gareth.tres" id="16_cpysf"]
 
-[node name="Bestiary" type="CanvasLayer"]
+[node name="Bestiary" type="CanvasLayer" groups=["main_menu_child"]]
 layer = 2
 script = ExtResource("1_ra74l")
 entries = Array[Resource("res://resources/bestiary_entries/bestiary_entry.gd")]([ExtResource("2_58t5y"), ExtResource("3_8fm05"), ExtResource("3_xky1k"), ExtResource("5_nwkj3"), ExtResource("6_gw1yc"), ExtResource("7_n8b14"), ExtResource("8_ehdlx"), ExtResource("9_bfjgm"), ExtResource("10_4t4jb"), ExtResource("11_knn20"), ExtResource("12_xtbcd"), ExtResource("13_8ss5j"), ExtResource("12_0gyvv"), ExtResource("13_0ndol"), ExtResource("15_seru0"), ExtResource("16_cpysf")])

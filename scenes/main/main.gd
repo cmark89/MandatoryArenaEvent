@@ -11,6 +11,7 @@ var blood_orbs_consumed = 0
 var true_final_boss_unlocked
 
 func _ready():
+	difficulty = GlobalVariables.current_difficulty
 	($%Player as Player).health_component.died.connect(on_player_died)
 	%EnemyManager.difficulty = difficulty
 	GameEvents.true_last_boss_killed.connect(on_true_last_boss_killed)

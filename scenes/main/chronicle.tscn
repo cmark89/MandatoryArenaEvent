@@ -11,7 +11,7 @@
 [ext_resource type="PackedScene" uid="uid://r5coytulttbm" path="res://scenes/ui/sound_texture_button.tscn" id="18_bs3r1"]
 [ext_resource type="PackedScene" uid="uid://cf1dxk0u24mtl" path="res://scenes/ui/sound_button.tscn" id="20_na36p"]
 
-[node name="Chronicle" type="CanvasLayer"]
+[node name="Chronicle" type="CanvasLayer" groups=["main_menu_child"]]
 layer = 2
 script = ExtResource("1_hnn2e")
 entries = Array[Resource("res://resources/chronicle_entries/chronicle_entry.gd")]([ExtResource("2_col6x"), ExtResource("3_alini"), ExtResource("4_4r472"), ExtResource("5_rl2si"), ExtResource("6_5ilmr"), ExtResource("7_stree"), ExtResource("8_a36xu")])

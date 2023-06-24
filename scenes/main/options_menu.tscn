@@ -3,7 +3,7 @@
 [ext_resource type="Script" path="res://scenes/main/options_menu.gd" id="1_vbprc"]
 [ext_resource type="PackedScene" uid="uid://cf1dxk0u24mtl" path="res://scenes/ui/sound_button.tscn" id="3_tu3ei"]
 
-[node name="OptionsMenu" type="CanvasLayer"]
+[node name="OptionsMenu" type="CanvasLayer" groups=["main_menu_child"]]
 layer = 2
 script = ExtResource("1_vbprc")
 
